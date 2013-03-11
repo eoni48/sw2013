@@ -1,0 +1,2 @@
+serviceClass: oscarsw.client.GreetingService
+path: BB248EAE896929310381945EC3DB73BC.gwt.rpc
