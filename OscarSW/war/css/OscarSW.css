@@ -9,4 +9,24 @@ h1 {
   margin: 40px 0px 70px;
   text-align: center;
 }
+.main{
+	width: 900px;
+	margin: 0px auto;
+	clear: both;
+	border: 1px solid gray;
+	border-radius: 0.3em 0.3em 0.3em 0.3em;
+	box-shadow: 0px 5px 20px rgb(0, 0, 0);
+}
+.cabezera {
+    height: 100px;
+    margin-left: 10px;
+}.cuerpo {
+    margin-left: 10px;
+}
+.proyecto {
+}
+.escrito {
+}
+
+
 
