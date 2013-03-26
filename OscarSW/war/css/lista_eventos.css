@@ -13,31 +13,58 @@ h1 {
 }
 .filtro{
 	width:20%;
-	height:100px;
-	float: left;
-	border: 1px solid black;
-}
-.eventos{
-	width:70%;
-	height:100px;
 	
 	float: left;
+	border: 1px solid #777777;
+	
+	
+}
+.filtro p{
+	font-size: 1em;
+	font-weight: bold;
+  	color: black;
+  	margin-left: 2px;
+}
+.filtro ul p{
+	font-size: 1em;
+	font-weight: bold;
+  	color: #289a0e;
+ 
+}
+.filtro ul{
+	
+}
+.filtro_seccion{
+	padding-left: 0px;
+}
+
+.eventos{
+	width:70%;
+	border: 1px solid #777777;
+	
+	float: left;
+	margin-left: 3px;
 }
 .evento{
 	width: 100%;
 	height: 70px;
 	
-	float: inherit;
-	border: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+	
+	clear: both;
 }
-.evento img{
+.evento_izquierda{
 	float: left;
 	height: 90%;
 	width: 20%;
 	margin-top: 3px;
 	margin-left: 3px;
 }
-.evento_datos{
+.evento_izquierda img{
+	height: 100%;
+	width: 100%;
+}
+.evento_centro{
 	float: left;
 	margin-left: 20px;
 	text-align: left;
@@ -61,19 +88,25 @@ h1 {
 .descripcion span{
 	margin-top: 0px;
 }
-.inscribirse{
+.evento_derecha{
 	border-left: 1px solid #777777;
 	width: 20%;
 	height: 100%;
 	float: right;
 }
-.inscribirse input{
-	margin-left: 25px;
-	margin-top: 10px;
-	size: auto;
+.evento_derecha input{
+	
 }
 .fecha{
 	text-align: center;
 	margin-top: 5px;
+}
+.inputs_evento{
+	margin-left: 13px;
+	margin-top: 10px;
+	
+	width:100%;
+	float: ;
+	border: 0px;
 }
 

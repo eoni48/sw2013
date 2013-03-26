@@ -26,8 +26,8 @@
 			<div class="contenido">
 				<div id="buscador">
 					<form id="form-buscador" action="URL" enctype="text/plain">
-					    <fieldset id="inputs">			
-					    	<label for="buscarTitulo">Buscar:</label>  	  
+					    <fieldset id="inputs_buscador">			
+					    	<label>Buscar:</label>  	  
 					        <input id="nombre" type="text"/>	
 					        <label> en </label>  	  
 					        <select id="categoria" name="categoria">  
@@ -64,15 +64,65 @@
 				</div>
 				<div class="contenido_eventos">
 					<div class="filtro">
-						<ul>
+						<p>Añadir filtros:</p>
+						<ul  class="filtro_seccion">
 							<li>
+								<p>Otras comunidades:</p>
+								<ul>
+									<li>
+										Andalucia
+									</li>
+									<li>
+										Aragon
+									</li>
+									<li>
+										Asturias
+									</li>
+									<li>
+										Baleares
+									</li>
+									<li>
+										Más...
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>Deportes:</p>
+								<ul>
+									<li>
+										Atletismo
+									</li>
+									<li>
+										Baloncesto
+									</li>
+									<li>
+										Fútbol
+									</li>
+									<li>
+										Varios
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>Tipo:</p>
+								<ul>
+									<li>
+										Popular
+									</li>
+									<li>
+										Federados
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</div>
+					
 					<div class="eventos">
 						<div class="evento" >
-							<a href="index.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
-							<div class="evento_datos">
+							<div class="evento_izquierda">
+								<a href="index.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+							</div>
+							<div class="evento_centro">
 								<div class="titulo">
 									<h5>Carrera del pavo </h5>
 								</div>
@@ -81,16 +131,70 @@
 								</div>
 								
 							</div>
-							<div class="inscribirse">
+							<div class="evento_derecha">
+								<div class="fecha">
+									<span>01/04/2014</span>
+								</div>
+								
+								<form action="URL">
+									<fieldset class="inputs_evento">	
+										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+						
+						<div class="evento" >
+							<div class="evento_izquierda">
+								<a href="index.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+							</div>
+							<div class="evento_centro">
+								<div class="titulo">
+									<h5>Carrera del pavo </h5>
+								</div>
+								<div class="descripcion">
+									<span>Carrera popular del pavo, en Haro(La Rioja)</span>
+								</div>
+								
+							</div>
+							<div class="evento_derecha">
 								<div class="fecha">
 									<span>01/04/2014</span>
 								</div>
 								<form action="URL">
-									<input id="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+									<fieldset class="inputs_evento">
+										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+									</fieldset>
 								</form>
 							</div>
 						</div>
-					</div>
+						
+						<div class="evento" >
+							<div class="evento_izquierda">
+								<a href="index.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+							</div>
+							<div class="evento_centro">	
+								<div class="titulo">
+									<h5>Carrera del pavo </h5>
+								</div>
+								<div class="descripcion">
+									<span>Carrera popular del pavo, en Haro(La Rioja)</span>
+								</div>
+								
+							</div>
+							<div class="evento_derecha">
+								<div class="fecha">
+									<span>01/04/2014</span>
+								</div>
+								<form action="URL">
+									 <fieldset class="inputs_evento">
+										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					
+					</div>			
 				</div>
 			</div><!--contenido  -->
 		</div><!--cuerpo  -->
