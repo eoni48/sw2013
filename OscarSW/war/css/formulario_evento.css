@@ -1,0 +1,30 @@
+input{
+	width: 90%;
+}
+
+.formulario{
+	margin-top: 30px;
+}
+.formulario .izquierda{
+	width: 45%;
+	float: left;
+}
+.formulario .derecha{
+	width: 45%;
+	float: right;
+}
+.formulario .inferior{
+	width: 95%;
+	clear: both;
+}
+.formulario #boton_aceptar{
+	width: 20%;
+	clear: both;
+}
+.formulario #boton_cancelar{
+	width: 20%;
+	clear: both;
+}
+.formulario .inferior .botones{
+	margin-left: 300px;	
+}

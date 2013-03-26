@@ -16,6 +16,14 @@ a:LINK,a:VISITED,a:ACTIVE{
 	text-decoration: none;
 	
 }
+fieldset{
+	border: 0px;
+} 
+input:focus,   
+select:focus{  
+    border: 2px solid #AFCDD8;  
+    background-color: #EBF2F4;  
+} 
 #contenedor{
 	width: 980px;
 	margin: 0px auto;
