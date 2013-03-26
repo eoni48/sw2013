@@ -1,0 +1,64 @@
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+.contenido_evento{
+	text-align: left;
+}
+.contenido_evento .superior{
+	
+	width: 90%;
+	font-weight: bold;
+	clear: both;	
+	
+}
+.contenido_evento .titulo{
+	width: 50%;
+	font-size: 1.5em;
+	color: #289a0e;
+	float: left;
+	
+	margin-left: 10px;
+}
+.contenido_evento .fecha{
+	width: 20%;
+	font-size: 1.0em;
+	color: #777777;
+	float: left;
+	margin-top: 15px;
+	margin-right: 80px;
+}
+.contenido_evento .izquierda{
+	width: 65%;
+	float: left;
+	padding-left: 15px;
+}
+.contenido_evento .izquierda .subtitulo h5{
+	font-size: 1em;
+	color: #289a0e;
+}
+.inputs_evento{
+	margin-left: 0px;
+	margin-top: 5px;
+	
+	width:100%;
+	border: 0px;
+}
+.contenido_evento .derecha{
+	float: right;
+	margin-right: 40px;
+}
+.contenido_evento .inferior{
+	clear: both;
+	padding-left: 350px;
+}
+.inputs_evento input{
+	width:30%;
+}
+.inputs_evento input:focus{  
+    border: 2px solid #AFCDD8;  
+    background-color: #EBF2F4;  
+}  

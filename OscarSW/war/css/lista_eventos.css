@@ -8,9 +8,46 @@ h1 {
 .contenido_eventos{
 	width: 100%;
 	height:100px;
-	float: left;
-	margin-top: 30px;
+	/*float: left;*/
+	clear: both;
+	margin-top: 80px;
 }
+#buscador{
+	/*border: 1px solid black;*/
+	height: 100%;
+	float: left;
+}
+#inputs_buscador{
+	width:100%;
+	float: left;
+	border: 0px;
+}
+#form-buscador label{
+	font-size:15px;  
+    margin-left:2px;
+   
+} 
+#form-buscador input{
+	width:200px;  
+	height: 20px;
+}
+#form-buscador input#boton-buscar{
+	width:150px;  
+	height: 30px;
+	margin-left: 20px;
+}   
+#form-buscador select{  
+    width:200px;  
+    /*border: 1px solid #CEE1E8;  */
+    margin-left:2px;  
+    padding:4px;  
+   
+}  
+#form-buscador input:focus,   
+#form-buscador select:focus{  
+    border: 2px solid #AFCDD8;  
+    background-color: #EBF2F4;  
+}  
 .filtro{
 	width:20%;
 	
@@ -73,8 +110,9 @@ h1 {
 .titulo{
 	margin-top: 5px;
 	margin-bottom: 5px;
+	text-align: center;
 }
-.titulo h5{
+.titulo span{
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-size: 1em;
@@ -103,10 +141,21 @@ h1 {
 }
 .inputs_evento{
 	margin-left: 13px;
-	margin-top: 10px;
+	margin-top: 5px;
 	
 	width:100%;
-	float: ;
 	border: 0px;
+}
+.inputs_evento input:focus{  
+    border: 2px solid #AFCDD8;  
+    background-color: #EBF2F4;  
+}
+.licencias{
+	clear: both;
+	padding-top: 40px;
+	font-size: 12px;
+}
+.licencias p{
+	display: inline-block;
 }
 
