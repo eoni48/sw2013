@@ -38,6 +38,7 @@ h1 {
 	height: 20px;
 }
 #form-buscador #inputs{
+	margin-top: 20px;
 	border: 0px;
 }
 #form-buscador input#boton-buscar{
