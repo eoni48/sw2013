@@ -9,7 +9,7 @@ h1 {
 
 #contenedor-index{
 	width: 980px;
-	height:300px;
+	
 	margin: 0px auto;
 	clear: both;
 	border: 1px solid gray;
@@ -36,6 +36,9 @@ h1 {
 #form-buscador input{
 	width:200px;  
 	height: 20px;
+}
+#form-buscador #inputs{
+	border: 0px;
 }
 #form-buscador input#boton-buscar{
 	width:150px;  
