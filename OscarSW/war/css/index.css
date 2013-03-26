@@ -6,81 +6,15 @@ h1 {
   margin: 40px 0px 70px;
   text-align: center;
 }
-ul{
-	list-style-type: none;
-}
-a{
-	
-}
-a:LINK,a:VISITED,a:ACTIVE{
-	color:#c0c0c0;
-	text-decoration: none;
-	
-}
-#contenedor{
+
+#contenedor-index{
 	width: 980px;
+	height:300px;
 	margin: 0px auto;
 	clear: both;
 	border: 1px solid gray;
 	border-radius: 0.3em 0.3em 0.3em 0.3em;
 	box-shadow: 0px 5px 20px rgb(0, 0, 0);
-}
-#cabezera{
-	height: 200px;
-}
-#navegacion{
 	
-}
-#menuNavegacion ul{
-	
-}
-
-#menuNavegacion li{
-	position:relative;
-	float: left;
-	width: auto;
-	margin-left: 30px;
-	
-}
-#menuNavegacion li.inicio{
-	
-}
-#menuNavegacion li.ultimo{
-	
-}
-.cuerpo{
-	margin-left: 10px;
-}
-
-.contenido{
 	float: none;
 }
-#inputs{
-	border: 0px;
-}
-#form-buscador label{
-	font-size:15px;  
-    margin-left:2px;
-   
-} 
-#form-buscador input{
-	width:200px;  
-	height: 20px;
-}
-#form-buscador input#boton-buscar{
-	width:150px;  
-	height: 30px;
-	margin-left: 20px;
-}   
-#form-buscador select{  
-    width:200px;  
-    /*border: 1px solid #CEE1E8;  */
-    margin-left:2px;  
-    padding:4px;  
-   
-}  
-#form-buscador input:focus,   
-#form-buscador select:focus{  
-    border: 2px solid #AFCDD8;  
-    background-color: #EBF2F4;  
-}  
