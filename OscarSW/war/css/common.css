@@ -100,7 +100,9 @@ select:focus{
 	clear: both;
 	padding-top: 40px;
 	font-size: 12px;
+	margin-left: 10px;
 }
 .licencias p{
 	display: inline-block;
+	
 }
