@@ -5,6 +5,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/formulario_evento.css"></link>
 	<link type="text/css" rel="stylesheet" href="css/common.css"></link>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	
 	<title>Evento</title>
 </head>
 <body>
@@ -88,7 +92,6 @@
 							<br />
 							<input name="es_gratis" type="radio" value="si"/>Si
 							<input name="es_gratis" type="radio" value="no"/>No
-							
 							<br />
 							<br />
 							
@@ -100,14 +103,14 @@
 						<fieldset class="inferior">
 							<label>Descripción:</label>
 							<br />
-							<textarea rows="20" cols="120"></textarea>
+							<textarea rows="20" cols="100"></textarea>
 							
 							<br />
 							<br />
 							
 							<label>Requisitos adicionales:</label>
 							<br />
-							<textarea rows="10" cols="120"></textarea>
+							<textarea rows="10" cols="100"></textarea>
 							<br />
 							<br />
 							<div class="botones">
@@ -166,5 +169,12 @@
 		</div><!-- licencias -->
 	
 	</div><!-- contenedor -->
+	<!--  <script>
+		jQuery(":input:radio").click(function() {
+			alert("Has hecho click");
+		});
+	</script>-->
+	<script type="text/javascript" src="js/eventos.js"></script>
 </body>
+
 </html>
