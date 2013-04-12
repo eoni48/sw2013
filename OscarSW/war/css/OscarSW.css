@@ -9,6 +9,18 @@ h1 {
   margin: 40px 0px 70px;
   text-align: center;
 }
+h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #777777;
+  text-align: left;
+}
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #777777;
+  text-align: left;
+}
 .main{
 	width: 900px;
 	margin: 0px auto;
