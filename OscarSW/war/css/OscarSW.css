@@ -39,6 +39,17 @@ h3 {
 }
 .escrito {
 }
-
+p{
+	margin-left: 10px;
+	margin-right: 15px;
+}
+pre {
+	border: 1px solid black;
+	margin-left: 10px;
+	margin-right: 15px;
+}
+.licencias{
+	margin-left: 50px;
+}
 
 

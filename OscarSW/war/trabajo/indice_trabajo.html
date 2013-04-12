@@ -4,12 +4,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link type="text/css" rel="stylesheet" href="../css/OscarSW.css">
+    <link type="text/css" rel="stylesheet" href="../css/OscarSW.css"/>
 
 	<title>Trabajo Drupal</title>
 </head>
 <body>
-	
+<div class="content">
 <div class="main">
 	<div class="cabezera">
 		<h1>Trabajo escrito Drupal</h1>
@@ -18,12 +18,12 @@
 	<div class="cuerpo">
 	
 		<div class="indice">
-			<a name="indice"></a><h2>Indice</h2>
+			<a name="indice"></a><h2>Índice</h2>
 			<ul>
-				<li><a href="#que_es">¿Ques es Druapl?</a></li>
+				<li><a href="#que_es">¿Qué es Druapl?</a></li>
 				<li><a href="#caracteristicas">Características de Drupal</a></li>
-				<li><a href="#funcion">Como funciona Drupal</a></li>
-				<li><a href="#modulo">Como crear e instalar nuestro propio módulo</a>
+				<li><a href="#funcion">Cómo funciona Drupal</a></li>
+				<li><a href="#modulo">Cómo crear e instalar nuestro propio módulo</a>
 					<ul>
 						<li><a href="#modulo_creacion">Creación</a></li>
 						<li><a href="#modulo_pagina">Crear página</a></li>
@@ -32,80 +32,387 @@
 						<li><a href="#modulo_instalacion">Instalación</a></li>
 					</ul>
 				</li>
-				<li><a href="#que_es">Uso del traductor</a></li>
-				<li><a href="#que_es">Gestión de usuarios y privilegios</a></li>
-				<li><a href="#que_es">Bibliografía y recursos</a></li>
+				<li><a href="#traduccion">Uso del traductor</a></li>
+				<li><a href="#usuarios">Gestión de usuarios y privilegios</a></li>
+				<li><a href="#referencias">Bibliografía y referencias</a></li>
 			</ul>
 		</div>
 		
 		<div class="contenido">
 			<a name="que_es"></a><h2>¿Que es Drupal?</h2>
 			<p>Drupal es es un gestor de contenido (CMS) de software libre bajo licencia 
-				GPLv3 escrito en PHP que actualmente  se encuentra en su versión 7.</p>
+			GPLv3 escrito en PHP que actualmente  se encuentra en su versión 7.</p>
+				
+				<a href="#indice">[volver al índice]</a>
 				
 			<a name="caracteristicas"></a><h2>¿Características de Druapl</h2>
-			<p>La característica principal de Drupal es la alta personalización y su 
-			versatilidad. Drupal a diferentcia de otros CMS se puede configurar y 
+				<p>La característica principal de Drupal es la alta personalización y su 
+				versatilidad. Drupal a diferentcia de otros CMS se puede configurar y 
 				personalizar practicamente todo.</p>
-			
-			<p>Una de las funciones mas importantes que puede cambiar a diferencia de 
-			otros CMS es la administracion, en Drupal el desarrolldor puede crear un 
-			backoffice (menu de administracion del sitio) para el usuario, de tal forma 
-			que no requiera del uso del menu de administrador que da por defecto Drupal y 
-			asi ocultarle información que no necesita saber ni ver.</p>
-			
-			<p>Una de las desventajas de Druapl frente a los demás es su curva de aprendizaje,
-			 ya que es muy elevada y dura.</p>
+				
+				<p>Una de las funciones más importantes que puedes cambiar a diferencia de 
+				otros CMS es el menú de administración, en Drupal el desarrolldor puede crear un 
+				backoffice (menu de administración del sitio) para el usuario, de tal forma 
+				que no requiera del uso del menu de administrador que da por defecto Drupal y 
+				así ocultarle información que no necesita saber ni ver. Y además, restringir las secciones
+				del menú de administrador por defecto si se desea usar.</p>
+				
+				<p>Una de las desventajas de Druapl frente a los demás es su curva de aprendizaje,
+				 ya que es muy elevada y dura.</p>
+				 
+				 <a href="#indice">[volver al índice]</a>
 			 
-			 <a name="funcion"></a><h2>Como funciona Drupal</h2>
-			 <p>Drupal funciona mediante módulos, estos son los que añaden los diferentes 
-			 tipos de funcionalidad a la página, incluso pudiéndose llegar a hacer toda la 
-			 página mediante módulos.</p>
-			 
-			 <p>Los módulos son archivos con las extensión .module  escritos en php, 
-			 mediante la administración de Drupal, o bien su invocación directa dentro de 
-			 un html, se define donde se colocara los módulos. Las opciones son muy diversas 
-			 y configurables, se puede configurar que tipo de usuario puede ver el módulo, 
-			 en que páginas debe ser mostrado.</p>
-			 
-			 <p>Existen tres tipos de módulos:</p>
-		 	<ul>
-		 		<li><p>Core: son los módulos que proporciona Drupal por defecto al instalarse.</p></li>
-		 		<li><p>Contributed: son los módulos que comparte la comunidad, se encuentran bajo licencia GPL.</p></li>
-		 		<li><p>Custom: son los que crea el propio desarrollador de la página.</p></li>
-		 	</ul>
-			 <p>Entra la enorme variedad de módulos existentes cabe destacar:</p>
-		 	<ul>
-		 		<li><p>Views: se utiliza en conjunto con CCK, sirve para crear listados 
-		 			personalizados de contenido.</p></li>
-		 		<li><p>Content Construction Kit (CCK): se utiliza para crear contenido 
-		 			personalizado.</p></li>
-		 		<li><p>ImageField: proporciona la posibilidad de añadir un fichero de 
-		 			imagen al contenido, se utiliza en conjunto a CCK.</p></li>
-		 		<li><p>FileField: proporciona una campo para subir archivos, se usa conjunto a CCK.</p></li>
-		 		<li><p>ImageCache: proporciona funcionalidades para adaptar y modificar 
-		 			las imágenes en la página a nuestras necesidades.</p></li>
-		 		<li><p>Administration menu: proporciona una barra superior para administrar
-		 			 el sitio.</p></li>
-		 		<li><p>PathAuto: hace que las urls del sitio sean comprensibles, 
-		 			sustituyendo, por ejemplo, el id de un nodo por el titulo.</p></li>
-		 		<li><p>Content access: permite definir permisos por tipo de contenido.</p></li>
-		 	</ul>
-		 	
-		 	<p>Aunque la potencia, variedad y personalización de los diferentes módulos 
-		 	creados por la comunidad es innegable, la potencia de Drupal radica  en la 
-		 	creación de módulos personalizados.</p>
-		 	
-		 	<a name="modulo"></a><h2>Como crear e instalar nuestro propio módulo.</h2>
-		 	<a name="modulo_creacion"></a><h3>Creación</h3>
-		 	<a name="modulo_pagina"></a><h3>Crear página</h3>
-		 	<a name="modulo_bloque"></a><h3>Crear bloque</h3>
-		 	<a name="modulo_estilo"></a><h3>Dar estilo al módulo</h3>
-		 	<a name="modulo_instalacion"></a><h3>Dar estilo al módulo</h3>
+			 <a name="funcion"></a><h2>Cómo funciona Drupal</h2>
+				 <p>Drupal funciona mediante módulos, estos son los que añaden los diferentes 
+				 tipos de funcionalidad a la página, incluso pudiéndose llegar a hacer toda la 
+				 página mediante los mismos.</p>
+				 
+				 <p>Los módulos son archivos con las extensión .module  escritos en php, que se instalan 
+				 mediante el menú de administración de Drupal, o bien su invocación directa dentro de 
+				 un html, se define donde se colocará los módulos. Las opciones son muy diversas 
+				 y configurables, se puede configurar que tipo de usuario puede ver el módulo, 
+				 en que páginas debe ser mostrado, etc.</p>
+				 
+				 <p>Existen tres tipos de módulos:</p>
+			 	<ul>
+			 		<li><p>Core: son los módulos que proporciona Drupal por defecto al instalarse.</p></li>
+			 		<li><p>Contributed: son los módulos que comparte la comunidad, se encuentran bajo licencia GPL.</p></li>
+			 		<li><p>Custom: son los que crea el propio desarrollador de la página.</p></li>
+			 	</ul>
+				 <p>Entre la enorme variedad de módulos existentes cabe destacar:</p>
+			 	<ul>
+			 		<li><p>Content Construction Kit (CCK): se utiliza para crear contenido 
+			 			personalizado.</p></li>
+			 		<li><p>Views: se utiliza en conjunto con CCK, sirve para crear listados 
+			 			personalizados de contenido.</p></li>
+			 		<li><p>ImageField: proporciona la posibilidad de añadir un fichero de 
+			 			imagen al contenido, se utiliza en conjunto a CCK.</p></li>
+			 		<li><p>FileField: proporciona una campo para subir archivos, se usa conjunto a CCK.</p></li>
+			 		<li><p>ImageCache: proporciona funcionalidades para adaptar y modificar 
+			 			las imágenes en la página a nuestras necesidades.</p></li>
+			 		<li><p>Administration menu: proporciona una barra superior para administrar
+			 			 el sitio.</p></li>
+			 		<li><p>PathAuto: hace que las urls del sitio sean comprensibles, 
+			 			sustituyendo, por ejemplo, el id de un nodo por el titulo.</p></li>
+			 		<li><p>Content access: permite definir permisos por tipo de contenido.</p></li>
+			 	</ul>
+			 	
+			 	<p>Aunque la potencia, variedad y personalización de los diferentes módulos 
+			 	creados por la comunidad es innegable, la potencia de Drupal radica  en la 
+			 	creación de módulos personalizados.</p>
+			 	
+			 	<a href="#indice">[volver al índice]</a>
+			 	
+		 	<a name="modulo"></a><h2>Cómo crear e instalar nuestro propio módulo.</h2>
+			 	<a name="modulo_creacion"></a><h3>Creación</h3>
+			 		<p>Los módulo en Drupal consisten en dos archivos, uno con la 
+		 			extensión *.info donde se define tanto la información del módulo como 
+		 			el nombre, descripción, el paquete al que pertenecen  (categoría) 
+		 			y la versión de Drupal.</p>
+			 		<p>Una ejemplo de fichero sería:</p>
+			 		
+			 		<pre><code>
+	name = Saludar
+	description = "Módulo que dice hola mundo"
+	package = Aprendiendo a programar con Drupal
+	core = 7.x
+						</code></pre>
+						
+					<p>Por otro lado está el fichero *.module que contiene el código php 
+					del módulo. El desarrollador podrá definir funciones y llamadas como 
+					si se tratase de un código php normal, pero hay un serie de funciones 
+					que son las que Drupal invocará del módulo.</p>
+					
+					<p>La forma de funcionar de Durpal es muy sencilla, un módulo puede 
+					tener varias funcionalidades según las funciones que implementen, 
+					dependiendo de donde sea invocado y/o usado el módulo Drupal invocará 
+					una u otras funciones. El formato de estas funciones es siempre el mismo 
+					hook_nombre, donde hook es el nombre del modulo, en el caso anterior 
+					saludar, y nombre sería la funcionalidad de la función. Por ejemplo un 
+					caso sencillo sería hook_menu(). Veamos unos ejemplos para mejor 
+					explicación.</p>
+					
+					<a href="#indice">[volver al índice]</a>
+			 		
+			 	<a name="modulo_pagina"></a><h3>Crear página</h3>
+			 		<p>Para crear una página necesitaremos implementar la función hook_menu(),
+			 		 en este caso saludar_menu(), un código sencillo sería:</p>
+			 		 
+			 		<pre><code>
+	/**
+	 * Implementa hook_menu().
+	 */
+	function saludar_menu() {
+		$items['saludar/hola-mundo'] = array(
+		  'title' => 'Saludar',
+		  'page callback' => 'saludar_hola_mundo',
+		  'access callback' => TRUE,
+		  'type' => MENU_CALLBACK,
+	
+			);
+		return $items;
+	}
+	
+	/**
+	 * Callback que implementa la página: saludar/hola-mundo.
+	 */
+	function saludar_hola_mundo() {
+		return "Hola Mundo";
+	}
+					</code>
+					</pre>
+					<p>En este caso cuando alguien entre a la url “saludar/hola-mundo” Drupal
+					mirará entre los módulos y si alguno tiene implementada esa dirección. 
+					Si se diese el caso la invocará</p>
+					
+					<p>Los campos de item son:</p>
+					<ul>
+						<li><p>page callback: es la función que se invocará para crear la 
+							pagina.</p></li>
+						<li><p>acces callback: son los permisos necesarios para ver la página,
+						 en este caso TRUE es todos los usuarios.</p></li>
+						<li><p>type: se usa para definir el tipo de página, es decir, 
+							en este caso le estamos diciendo a Drupal que no queremos que 
+							aparezca en el menú, si quisiéramos pondríamos MENU_NORMAL_ITEM</p></li>
+					</ul>
+					
+					<a href="#indice">[volver al índice]</a>
+				
+				<a name="modulo_bloque"></a><h3>Crear bloque</h3>
+					<p>Los bloques son una de la funcionalidades más importantes y útiles de 
+					Drupal, para mostrar información en las diferentes páginas del sitio. 
+					Los bloques pueden colocarse en el lugar de la pantalla que deseemos y 
+					hayamos definido en el tema.
+					</p>
+										
+					<p>Un mismo módulo puede tener varios bloques, para definir los diferentes 
+					bloques se implementa la función hook_block_info, siguiendo el ejemplo 
+					sería:</p>
+					
+					<pre>
+	<code>
+	/**
+	 * Implementa hook_block_info().
+	 */
+	function saludar_block_info() {
+		$blocks['hola_mundo'] = array(
+		  'info' => 'Bloque para Hola Mundo',
+		);
+		return $blocks;
+	}
+	</code>
+					</pre>
+					
+					<p>Aunque se puede especificar en la función, los normal es 
+					configurar en el menú de administración la posición del bloque, 
+					su peso, etc.</p>
+					
+					<p>Una vez implementada la información ya podremos activar el módulo 
+					y colocarlo con el menú de administración. Ahora solo nos falta definir 
+					lo que mostrará el módulo, esto se hace mediante la función 
+					hook_block_view, siguiendo el ejemplo:</p>
+					
+					<pre>
+	<code>
+	/**
+	 * Implementa hook_block_view().
+	 */
+	function saludar_block_view($delta = '') {
+		switch ($delta) {
+		  case 'hola_mundo':
+		    $block['content'] = saludar_hola_mundo();
+		    return $block;
+		}
+		break;
+	}
+	</code>
+					</pre>
+			 		
+			 		<p>Este ejemplo mostraría exactamente lo mismo que su equivalente 
+			 		hook_menu, pero al ser un bloque tiene la pecularidad de que se 
+			 		coloca en el lugar y páginas del sitio web que definamos y no solo en una 
+			 		pagina en concreto. Esta versatilidad es 
+			 		la gran potencia de los bloques.</p>
+			 		
+			 		<a href="#indice">[volver al índice]</a>
+			 		
+			 	<a name="modulo_estilo"></a><h3>Dar estilo al módulo</h3>
+			 		<p>Aunque podríamos definir la salida del módulo mediante html, 
+			 		estaríamos mezclando presentación y funcionalidad, por ello lo apropiando 
+			 		es usar un fichero de plantilla que se encargue de ello.</p>
+			 		
+			 		<p>Para hacerlo hay que seguiir varios pasos. Primero debemos devolver 
+			 		la información, en vez de con un string normal, mediante la función 
+			 		theme() para que esta se encargue de darle formato. Para ello cambiamos 
+			 		la función saludar_hola_mundo que devuelve “hola mundo” por:</p>
+			 		
+			 		<pre>
+	<code>
+	function saludar_hola_mundo() { 
+		$variables = array(
+		    'message' => 'Hola Mundo',
+		);
+		return theme('saludar_hola_mundo', $variables);
+	}
+	</code>
+					</pre>
+					<p>Ahora le estamos pasando a la plantilla la información a mostrar, 
+					cuando usamos la función theme lo que Drupal hará será invocar a 
+					hook_theme del módulo, así pues creamos esa función por ejemplo:</p>
+					
+					<pre>
+	<code>
+	/**
+	 * Implementa hook_theme().
+	 */
+	function saludar_theme() {
+		return array(
+		  'saludar_hola_mundo' => array(
+		    'template' => 'saludar-hola-mundo',
+		  ),
+		);
+	}
+	</code>
+					</pre>
+					
+					<p>Al hacer esto estamos invocando a la plantilla con nombre 
+					'saludar-hola-mundo' para que de formato a la llamada de 
+					saludar_hola_mundo. Ahora solo necesitamos crear el templete 
+					saludar-hola-mundo.tpl.php dentro de la carpeta del módulo. 
+					Aunque podría ser sobrescrito por el tema para que se adaptase a cada 
+					página web.</p>
+					
+					<p>Un sencillo ejemplo del contenido de la plantilla sería:</p>
+					
+					<pre>
+	<code>
+	&lt;p class="saludo">&lt;em>&lt;?php echo $message; ?>&lt;/em>&lt;/p>								
+	</code>
+					</pre>
+			 		
+			 		<p>Como vemos estamos mostrando la variable que definimos anteriormente 
+			 		$message pero con formato. Podríamos definir otras muchísimas variables 
+			 		y crear una plantilla tan compleja como quisiésemos.</p>
+			 		
+			 		<a href="#indice">[volver al índice]</a>
+			 	
+			 	<a name="modulo_instalacion"></a><h3>Instalación</h3>
+			 		<p>Para instalar un módulo basta con ir a la carpeta 
+			 		/sites/all/modules y crear una carpeta con el nombre del módulo y 
+			 		alojar en ella los ficheros anteriormente descritos. Después ir a la
+					 sección de módulos del panel de administración de la página 
+			 		y activarlo.</p>
+		
+			 		
+			 		<a href="#indice">[volver al índice]</a>
+				
+				<a name="traduccion"></a><h3>Uso del traductor</h3>
+					<p>Drupal tiene una característica interesantísima como puede ser 
+					las traducciones automáticas. Hay dos formas de usarlas:</p>
+					
+					<p>Una es cuando se programan los módulos, en vez de poner las cadenas 
+					de texto se usa la función t() haciendo la traducción al idioma por 
+					defecto del sitio, por ejemplo: t('Hellow world');</p>
+					
+					<p>La otra y posiblemente la mas interesante es la posibilidad de traducir y marcar 
+					traducciones de otros módulos. Por ejemplo si instalamos un módulo externo y este se
+					encuentra en inglés o con una mala traducción. Mediante el menú de administrador podemos
+					buscar las diferentes palabras y frases y marcar o corregir la traducción que tenga 
+					asignada.</p>
+					
+					<p>Con estas opciones podemos localizar totalmente un sitio a un idioma independientemente
+					de los módulos o traducciones que existan.</p>
+					
+					<a href="#indice">[volver al índice]</a>
+					
+				<a name="usuarios"></a><h3>Gestión de usuarios y privilegios</h3>
+					<p>La gestión de usuarios y sus diferentes permisos es una de las característica que 
+					hacen a Drupal destacar por encima de los demás y permiten ajustar los permisos 
+					perfectamente.</p>
+					
+					<p>Drupal permite crear tantos roles de usuarios como se desee, para ajustar cada página
+					a sus propias necesidades. Una vez creados los roles necesarios y mediante el menú de
+					administración podemos definir que puede hacer cada usuario, lo más común es:</p>
+					  
+					<ul>
+						<li><p>Ver el contenido publicado.</p></li>
+						<li><p>Crear contenido de cada uno de los tipos de datos del sistema.</p></li>
+						<li><p>Editar el contenido de estos tipos de datos. Sólo el propio o también el creado 
+							por otros usuarios. </p></li>
+						<li><p>Borrar el contenido, propio o también el creado por otros usuarios. </p></li>
+					</ul>
+			 		
+			 		<p>A partir de los permisos y opciones que proporciona el core de Drupal, están los 
+			 		permisos que irán surgiendo cuando se instalen módulos.</p>
+			 		
+			 		<p>Como ya dijimos anteriormente uno de los módulos mas importantes 
+			 		es el CCK para crear contenido personalizado. El mayor énfasis que 
+			 		tenemos en los permisos es gestionar que se puede hacer con el 
+			 		contenido.</p>
+			 		
+			 		<p>Para ello Drupal da por defecto (desde Drupal 7) 
+			 		el módulo Field Permissions, con él podemos definir los permisos 
+			 		de cada campo del contenido, además desde la versión 7 Drupal ya no se basa en
+			 		nodos y se asignan los permisos como tales, si no que, se asigna 
+			 		mediante campos y estos a su vez son usados por los nodos (que en 
+			 		drupal 7 es una entidad más).</p>
+			 		
+			 		<p>También tenemos a nuestra disposición el módulo Content access, 
+			 		que permite personalizar aún más los permisos. Drupal permite dar 
+			 		los permisos en general, pero no nos permite definirlos concretamente.
+			 		Por ejemplo definir que un contenido solo pueda ser editado por su 
+			 		autor, algo que resulta tremendamente útil para los blogs. Con este 
+			 		módulo (Content access) podremos definir por cada usuario si puede 
+			 		editar, ver y borrar contenido. Pero no solo contenido en general si
+			 		no que nos permite las opciones any y own (cualquiera y propio).</p>
+			 		
+			 		<p>Drupal también permite dar permisos por Taxonomías (Taxonomy) 
+			 		si el contenido tiene alguna asignado.</p>
+			 	<a href="#indice">[volver al índice]</a>
+		 		
+		 	<a name="referencias"></a><h3>Bibliografía y referencias</h3>
+		 		<p>Este manual ha sido construido en base a experiencias personales y la información y código extraido de:</p>
+		 		<p><a href="http://www.redmamba.es/hola-mundo-programar-drupal-7-2011#primer-modulo">
+		 			Juan Olalla Olmo</a></p>
+		 		<p><a href="http://drupal.org.es/">Druapl Hispano</a></p>
+		 		<p><a href="http://www.mediaglobe.es/es/blog/drupal-7-gestion-de-usuarios-y-permisos">
+		 		Alfonso Heredia</a></p>
+		 		<p>Los derechos así como la propiedad intelectual usadas pertenece a los mismos.</p>
+				<a href="#indice">[volver al índice]</a>
 		</div>
 		
 	</div>
-	
+</div>
+	<div class="licencias">
+		<p>
+		    <a href="http://validator.w3.org/check?uri=referer"><img
+		      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+  	
+		    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+		        <img style="border:0;width:88px;height:31px"
+		            src="http://jigsaw.w3.org/css-validator/images/vcss"
+		            alt="¡CSS Válido!" />
+		    </a>
+		</p>
+		
+		<p>
+			Copyright (C) 2013  Óscar Crespo Salazar.
+			<br />
+			<a rel="license" href="http://www.gnu.org/licenses/gpl.html"><img src="../res/gpl.png" alt="gplv3" /> </a>
+			<br />
+			código licenciado bajo <a href="http://www.gnu.org/licenses/gpl.html">GPLV3</a>.
+			<br />
+			
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">
+					<img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
+			</a>
+			<br />
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">
+					licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 Unported
+			</a>
+		</p>
+            
+	</div>
 </div>
 
 </body>
