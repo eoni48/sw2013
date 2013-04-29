@@ -58,6 +58,6 @@ h1 {
 }  
 #form-buscador input:focus,   
 #form-buscador select:focus{  
-    border: 2px solid #AFCDD8;  
-    background-color: #EBF2F4;  
+    border: 2px solid #999999;  
+    background-color: #ffffff;  
 }  
