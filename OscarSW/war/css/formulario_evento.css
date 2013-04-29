@@ -9,9 +9,15 @@ input{
 	width: 45%;
 	float: left;
 }
+.formulario .izquierda .federado{
+	display: none;
+}
 .formulario .derecha{
 	width: 45%;
 	float: right;
+}
+.formulario .derecha .precio{
+		display: none;
 }
 .formulario .inferior{
 	width: 95%;

@@ -65,9 +65,11 @@
 							</select>
 							<br />
 							<br />
-							<label>Número de federado:</label>
-							<br />
-							<input id="num_federado" type="text"/>
+							<div class="federado">
+								<label>Número de federado:</label>
+								<br />
+								<input id="num_federado" type="text"/>
+							</div>
 							<br />
 							<br />
 							
@@ -91,14 +93,14 @@
 							<label>¿Gratuito?</label>
 							<br />
 							<input name="es_gratis" type="radio" value="si"/>Si
-							<input name="es_gratis" type="radio" value="no"/>No
+							<input name="es_pago" type="radio" value="no"/>No
 							<br />
 							<br />
-							
-							<label>Precio:</label>
-							<br />
-							<input id="precio" type="text"/>€
-							
+							<div class="precio">
+								<label>Precio:</label>
+								<br />
+								<input id="precio" type="text"/>€
+							</div>
 						</fieldset>
 						<fieldset class="inferior">
 							<label>Descripción:</label>
@@ -169,12 +171,8 @@
 		</div><!-- licencias -->
 	
 	</div><!-- contenedor -->
-	<!--  <script>
-		jQuery(":input:radio").click(function() {
-			alert("Has hecho click");
-		});
-	</script>-->
-	<script type="text/javascript" src="js/eventos.js"></script>
+
+	<script type="text/javascript" src="js/formulario_eventos.js"></script>
 </body>
 
 </html>
