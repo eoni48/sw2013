@@ -6,7 +6,7 @@ h1 {
   text-align: center;
 }
 ul{
-	list-style-type: none;
+	/*list-style-type: none;*/
 }
 a{
 	
@@ -22,7 +22,7 @@ fieldset{
 input:focus,
 select:focus{  
     border: 2px solid #999999;  
-    background-color: #ffffff;  
+    background-color: white;  
 } 
 #contenedor{
 	width: 980px;
@@ -55,7 +55,7 @@ select:focus{
 	background: 0px center transparent;
 }
 #menuNavegacion ul{
-	
+	list-style-type: none
 }
 
 #menuNavegacion li{
@@ -87,6 +87,10 @@ select:focus{
 #menuNavegacion li.ultimo{
 	
 }
+#menuNavegacion li.log{
+	float: right;
+	margin-right: 15px;
+}
 .cuerpo{
 	width:98%;
 	margin-left: 10px;
@@ -95,8 +99,13 @@ select:focus{
 .contenido{
 	width:100%;
 	/*border: 1px solid black;*/
-	float: left;
+	/*float: left;*/
 	
+}
+.mapa_web{
+	margin-top: 50px;
+	padding-top: 150px;
+	clear:both;
 }
 .licencias{
 	margin-top: 50px;
@@ -104,6 +113,8 @@ select:focus{
 	padding-top: 40px;
 	font-size: 12px;
 	margin-left: 10px;
+	width: 980px;
+	margin: 0px auto;
 }
 .licencias p{
 	display: inline-block;

@@ -21,6 +21,8 @@ h1 {
 	width:100%;
 	float: left;
 	border: 0px;
+	margin-top:15px;
+	margin-bottom:25px;
 }
 #form-buscador label{
 	font-size:15px;  
@@ -70,7 +72,7 @@ h1 {
  
 }
 .filtro ul{
-	
+	list-style-type: none;
 }
 .filtro_seccion{
 	padding-left: 0px;
@@ -81,7 +83,7 @@ h1 {
 	border: 1px solid #777777;
 	
 	float: left;
-	margin-left: 3px;
+	margin-left: 35px;
 }
 .evento{
 	width: 100%;
