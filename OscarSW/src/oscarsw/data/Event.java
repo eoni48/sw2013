@@ -5,28 +5,55 @@ package oscarsw.data;
 
 import java.util.ArrayList;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+import org.apache.tools.ant.taskdefs.Concat;
+
+import com.google.appengine.api.datastore.Key;
+
 /**
  * @author roni
  *
  */
 enum Type{pop,land}
+
+@PersistenceCapable
 public class Event {
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private Key key;
+	@Persistent
 	private Organizer creator;
 	
+	@Persistent
 	private String name;
+	@Persistent
 	private String organizer;
+	@Persistent
 	private String city;
+	@Persistent
 	private String province;
+	@Persistent
 	private String place;
+	@Persistent
 	private String date;
+	@Persistent
 	private Type type;
+	@Persistent
 	private boolean free;
+	@Persistent
 	private float cost;
 	
+	@Persistent
 	private String description;
+	@Persistent
 	private String plus;
 	
-	private ArrayList<Competitor> competitors;
+	@Persistent
+	private ArrayList<String> competitors;
 	
 	public Event(Organizer creator,String name,String organizer,String city,String province,String place,String date,Type type,
 			boolean free,float cost,String description,String plus){
@@ -43,7 +70,7 @@ public class Event {
 		this.cost = cost;
 		this.description = description;
 		this.plus = plus;
-		
+		competitors = new ArrayList<String>();
 	}
 
 	/**
@@ -182,7 +209,7 @@ public class Event {
 	/**
 	 * @return the competitors
 	 */
-	public ArrayList<Competitor> getCompetitors() {
+	public ArrayList<String> getCompetitors() {
 		return competitors;
 	}
 }

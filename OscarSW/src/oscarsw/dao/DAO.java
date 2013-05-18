@@ -3,15 +3,15 @@
  */
 package oscarsw.dao;
 
+import java.util.List;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 
-import org.datanucleus.jpa.Persistable;
-
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.search.ExpressionParser.num_return;
-
+import oscarsw.data.Competitor;
+import oscarsw.data.Organizer;
 import oscarsw.data.User;
 
 /**
@@ -20,12 +20,11 @@ import oscarsw.data.User;
  */
 public class DAO {
 	private static DAO singleton;
-	 private static final PersistenceManagerFactory pmfInstance =
-		        JDOHelper.getPersistenceManagerFactory("transactions-optional");
+	private PersistenceManagerFactory pmfInstance;
 
 	
 	private DAO(){
-		
+		 pmfInstance =  JDOHelper.getPersistenceManagerFactory("transactions-optional");
 	}
 	public static DAO getInstance(){
 		if(singleton == null){
@@ -33,7 +32,16 @@ public class DAO {
 		}
 		return singleton;
 	}
-	public void addUser(User user){
+	public void addCompetitor(Competitor user){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		try{
+			pm.makePersistent(user);
+		}
+		finally{
+			pm.close();
+		}
+	}
+	public void addOrganizer(Organizer user){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		try{
 			pm.makePersistent(user);
@@ -53,15 +61,19 @@ public class DAO {
 	}
 	public User getUser(String nick,String pass){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
-		//String query = "select from "+ User.class.getName()+" WHERE "
-		User user;
+		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
+		User user = null;
 		try {
-
-			user = pm.getObjectById(User.class,nick);
-			if(user != null){
-				if(!user.getPass().equals(pass)){
-					user = null;
-				}
+			Query query = pm.newQuery(Competitor.class,"nick=='"+nick+"' && pass=='"+pass+"'");
+			//Query query = pm.newQuery(Competitor.class);
+			List<Competitor> list = (List<Competitor>) query.execute();
+			
+			
+			if(list.isEmpty()){
+				return null;
+			}
+			else{
+				user = list.get(0);
 			}
 		}
 		finally {
