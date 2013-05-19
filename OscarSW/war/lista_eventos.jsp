@@ -151,6 +151,7 @@
 					
 					<div class="eventos">
 							<%
+							//response.sendRedirect("evento.jsp?id"+e.getKey());
 								List<Event> events = (DAO.getInstance()).getEvents();
 								if(events != null){
 									for(Event e : events){
@@ -161,7 +162,7 @@
 										</div>
 										<div class="evento_centro">
 											<div class="titulo">
-												<a href="evento.html"><span><%out.println(e.getName()); %></span></a>
+												<a onclick="response.sendRedirect("evento.jsp?id="+e.getKey());"><span><%out.println(e.getName()); %></span></a>
 											</div>
 											<div class="descripcion">
 												<p><%out.println(e.getDescription()); %></p>
@@ -170,7 +171,7 @@
 										</div>
 										<div class="evento_derecha">
 											<div class="fecha">
-												<span><%out.println(e.getDate()); %></span>
+												<span><%  out.println(e.dateToString()); %></span>
 											</div>
 											
 											<form action="URL">
