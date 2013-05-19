@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,8 +19,32 @@
 				<div id="menuNavegacion">
 					<ul>
 						<li class="inicio"><a href="index.html">Inicio </a></li>
-						<li class="ultimo"><a href="lista_eventos.html">Eventos</a></li>
-						<li class="log"><a href="log.html">Log in </a></li>
+						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
+						<%
+						session =  request.getSession();
+						String type = (String)session.getAttribute("type");
+						if(type != null && type.equals("organizer")){
+						%>
+						<li class="ultimo"><a href="formulario_evento.html">Crear evento</a></li>
+						<% 
+						}
+						
+						String nick = (String)session.getAttribute("nick");
+						if(nick == null){
+						%>
+							<li class="log"><a href="log.html">Log in </a></li>
+						<%
+						}
+						else{
+						%>
+							<li class="log"><a><%out.println("Bienvenido, "+nick);%></a>
+							 <a href="/login"> (No eres tu)</a>
+							</li>
+						<% 
+						}
+						%>
+						
+						
 					</ul>
 				
 				</div>
