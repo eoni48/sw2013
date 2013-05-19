@@ -26,6 +26,12 @@ public class User {
 		this.pass = pass;
 	}
 	/**
+	 * @return the nick
+	 */
+	public String getNick() {
+		return nick;
+	}
+	/**
 	 * @return the pass
 	 */
 	public String getPass() {

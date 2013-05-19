@@ -11,6 +11,7 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
 import oscarsw.data.Competitor;
+import oscarsw.data.Event;
 import oscarsw.data.Organizer;
 import oscarsw.data.User;
 
@@ -50,6 +51,15 @@ public class DAO {
 			pm.close();
 		}
 	}
+	public void addEvent(Event event){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		try{
+			pm.makePersistent(event);
+		}
+		finally{
+			pm.close();
+		}
+	}
 	public void removeUser(User user){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		try{
@@ -59,10 +69,10 @@ public class DAO {
 			pm.close();
 		}
 	}
-	public User getUser(String nick,String pass){
+	public Competitor getCompetitor(String nick,String pass){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
-		User user = null;
+		Competitor user = null;
 		try {
 			Query query = pm.newQuery(Competitor.class,"nick=='"+nick+"' && pass=='"+pass+"'");
 			//Query query = pm.newQuery(Competitor.class);
@@ -81,5 +91,64 @@ public class DAO {
 	    }
 
 		return user;
+	}
+	public Organizer getOrganizer(String nick,String pass){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
+		Organizer user = null;
+		try {
+			Query query = pm.newQuery(Organizer.class,"nick=='"+nick+"' && pass=='"+pass+"'");
+			//Query query = pm.newQuery(Competitor.class);
+			List<Organizer> list = (List<Organizer>) query.execute();
+			
+			
+			if(list.isEmpty()){
+				return null;
+			}
+			else{
+				user = list.get(0);
+			}
+		}
+		finally {
+	        pm.close();
+	    }
+
+		return user;
+	}
+	public List<Event> getEvents(){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
+		List<Event>  events = null;
+		try {
+			Query query = pm.newQuery(Event.class);
+			query.setOrdering("date desc");
+			events = (List<Event>) query.execute();
+			if(events.isEmpty()){
+				return null;
+			}
+		
+		}
+		finally {
+	        pm.close();
+	    }
+		return events;
+	}
+	public List<Event> getEvents(Organizer sport){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
+		List<Event>  events = null;
+		try {
+			Query query = pm.newQuery(Event.class," sport == '"+sport+"' order by date asc");
+			events = (List<Event>) query.execute();
+			
+			if(events.isEmpty()){
+				return null;
+			}
+		
+		}
+		finally {
+	        pm.close();
+	    }
+		return events;
 	}
 }

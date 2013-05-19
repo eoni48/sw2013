@@ -4,13 +4,12 @@
 package oscarsw.data;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
-import org.apache.tools.ant.taskdefs.Concat;
 
 import com.google.appengine.api.datastore.Key;
 
@@ -18,15 +17,17 @@ import com.google.appengine.api.datastore.Key;
  * @author roni
  *
  */
-enum Type{pop,land}
 
 @PersistenceCapable
 public class Event {
+	
+	public enum Type{pop,land}
+	public enum Sport{athletics,footbal,basket,other}
+
+	
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key key;
-	@Persistent
-	private Organizer creator;
 	
 	@Persistent
 	private String name;
@@ -39,7 +40,9 @@ public class Event {
 	@Persistent
 	private String place;
 	@Persistent
-	private String date;
+	private Sport sport;
+	@Persistent
+	private Date date;
 	@Persistent
 	private Type type;
 	@Persistent
@@ -55,10 +58,9 @@ public class Event {
 	@Persistent
 	private ArrayList<String> competitors;
 	
-	public Event(Organizer creator,String name,String organizer,String city,String province,String place,String date,Type type,
-			boolean free,float cost,String description,String plus){
+	public Event(String name,String organizer,String city,String province,String place,Date date,Type type,
+			boolean free,float cost,String description,String plus,Sport sport){
 		
-		this.creator = creator;
 		this.name = name;
 		this.organizer = organizer;
 		this.city = city;
@@ -70,6 +72,7 @@ public class Event {
 		this.cost = cost;
 		this.description = description;
 		this.plus = plus;
+		this.sport = sport;
 		competitors = new ArrayList<String>();
 	}
 
@@ -118,14 +121,14 @@ public class Event {
 	/**
 	 * @return the date
 	 */
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
