@@ -47,4 +47,13 @@
 		<servlet-name>newUser</servlet-name>
 		<url-pattern>/nuevo_usuario</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>newEvent</servlet-name>
+		<servlet-class>oscarsw.client.CreateEvent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>newEvent</servlet-name>
+		<url-pattern>/nuevo_evento</url-pattern>
+	</servlet-mapping>
 </web-app>

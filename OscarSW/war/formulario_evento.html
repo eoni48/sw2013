@@ -36,26 +36,26 @@
 					<!--<div class="superior">
 						
 					</div>-->
-					<form action="URL">
+					<form method="post" action="/nuevo_evento">
 						
 						<fieldset class="izquierda">
 							<label>Nombre del evento:</label>
 							<br />
-							<input id="nombre" type="text"/>
+							<input id="nombre" type="text" name="nombre"/>
 							
 							<br />
 							<br />
 							
 							<label>Localidad:</label>
 							<br />
-							<input id="localidad" type="text"/>
+							<input id="localidad" type="text" name="localidad"/>
 							
 							<br />
 							<br />
 							
 							<label>Lugar:</label>
 							<br />
-							<input id="lugar" type="text"/>
+							<input id="lugar" type="text" name="lugar"/>
 							
 							<br />
 							<br />
@@ -70,7 +70,7 @@
 							<div class="federado">
 								<label>Número de federado:</label>
 								<br />
-								<input id="num_federado" type="text"/>
+								<input id="num_federado" type="text" name="federado"/>
 							</div>
 							<br />
 							<br />
@@ -78,23 +78,27 @@
 							
 						</fieldset>
 						<fieldset class="derecha">
-							<label>Organizador:</label>
+							<label>Deporte:</label>
 							<br />
-							<input id="organizador" type="text"/>
+							<select id="tipo" name="deporte">
+								<option value="atletismo">Atletismo</option>
+								<option value="baloncesto">Baloncesto</option>
+								<option value="futbol">Fútbol</option>
+								<option value="otros">Otros</option>
+							</select>
+							<br />
+							<br />
 							
+							<label>Comunidad Autonoma:</label>
 							<br />
-							<br />
-							
-							<label>Provincia:</label>
-							<br />
-							<input id="provincia" type="text"/>
+							<input id="comunidad" type="text" name="comunidad"/>
 							
 							<br />
 							<br />
 							
 							<label>Fecha:</label>
 							<br />
-							<input id="fecha" type="text" readonly="readonly"/>
+							<input id="fecha" type="text" readonly="readonly" name="fecha"/>
 							
 							<br />
 							<br />
@@ -102,31 +106,31 @@
 							<label>¿Gratuito?</label>
 							<br />
 							<input name="es_gratis" type="radio" value="si"/>Si
-							<input name="es_pago" type="radio" value="no"/>No
+							<input name="es_gratis" type="radio" value="no"/>No
 							<br />
 							<br />
 							<div class="precio">
 								<label>Precio:</label>
 								<br />
-								<input id="precio" type="text"/>€
+								<input id="precio" type="text" name="precio"/>€
 							</div>
 						</fieldset>
 						<fieldset class="inferior">
 							<label>Descripción:</label>
 							<br />
-							<textarea rows="20" cols="100"></textarea>
+							<textarea rows="20" cols="100" name="descripcion"></textarea>
 							
 							<br />
 							<br />
 							
 							<label>Requisitos adicionales:</label>
 							<br />
-							<textarea rows="10" cols="100"></textarea>
+							<textarea rows="10" cols="100" name="adicional"></textarea>
 							<br />
 							<br />
 							<div class="botones">
-								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar"/>
-								<input id="boton_cancelar" type="submit" title="cancelar" value="Cancelar"/>
+								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar" name="aceptar"/>
+								<input id="boton_cancelar" type="submit" title="cancelar" value="Cancelar" name="cancelar"/>
 							</div>
 							
 						</fieldset>

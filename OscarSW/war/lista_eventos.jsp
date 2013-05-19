@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="oscarsw.data.Event"%>
+<%@page import="oscarsw.dao.DAO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -147,81 +150,41 @@
 					</div>
 					
 					<div class="eventos">
-						<div class="evento" >
-							<div class="evento_izquierda">
-								<a href="evento.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
-							</div>
-							<div class="evento_centro">
-								<div class="titulo">
-									<a href="evento.html"><span>Carrera del pavo </span></a>
-								</div>
-								<div class="descripcion">
-									<p>Carrera popular del pavo, en Haro(La Rioja)  </p>
-								</div>
-								
-							</div>
-							<div class="evento_derecha">
-								<div class="fecha">
-									<span>01/04/2014</span>
-								</div>
-								
-								<form action="URL">
-									<fieldset class="inputs_evento">	
-										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-						
-						<div class="evento" >
-							<div class="evento_izquierda">
-								<a href="evento.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
-							</div>
-							<div class="evento_centro">
-								<div class="titulo">
-									<a href="evento.html"><span>Carrera del pavo </span></a>
-								</div>
-								<div class="descripcion">
-									<span>Carrera popular del pavo, en Haro(La Rioja)</span>
-								</div>
-								
-							</div>
-							<div class="evento_derecha">
-								<div class="fecha">
-									<span>01/04/2014</span>
-								</div>
-								<form action="URL">
-									<fieldset class="inputs_evento">
-										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-						
-						<div class="evento" >
-							<div class="evento_izquierda">
-								<a href="evento.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
-							</div>
-							<div class="evento_centro">	
-								<div class="titulo">
-									<a href="evento.html"><span>Carrera del pavo </span></a>
-								</div>
-								<div class="descripcion">
-									<span>Carrera popular del pavo, en Haro(La Rioja)</span>
-								</div>
-								
-							</div>
-							<div class="evento_derecha">
-								<div class="fecha">
-									<span>01/04/2014</span>
-								</div>
-								<form action="URL">
-									 <fieldset class="inputs_evento">
-										<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
-									</fieldset>
-								</form>
-							</div>
-						</div>
+							<%
+								List<Event> events = (DAO.getInstance()).getEvents();
+								if(events != null){
+									for(Event e : events){
+									%>
+									<div class="evento" >
+										<div class="evento_izquierda">
+											<a href="evento.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+										</div>
+										<div class="evento_centro">
+											<div class="titulo">
+												<a href="evento.html"><span><%out.println(e.getName()); %></span></a>
+											</div>
+											<div class="descripcion">
+												<p><%out.println(e.getDescription()); %></p>
+											</div>
+											
+										</div>
+										<div class="evento_derecha">
+											<div class="fecha">
+												<span><%out.println(e.getDate()); %></span>
+											</div>
+											
+											<form action="URL">
+												<fieldset class="inputs_evento">	
+													<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+									<%	
+									}
+								}
+							%>
+					
 					
 					</div>			
 				</div>
