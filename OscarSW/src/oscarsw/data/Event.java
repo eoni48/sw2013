@@ -3,6 +3,7 @@
  */
 package oscarsw.data;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -77,6 +78,13 @@ public class Event {
 	}
 
 	/**
+	 * @return the key
+	 */
+	public Key getKey() {
+		return key;
+	}
+
+	/**
 	 * @return the city
 	 */
 	public String getCity() {
@@ -123,6 +131,10 @@ public class Event {
 	 */
 	public Date getDate() {
 		return date;
+		
+	}
+	public String dateToString(){
+		return new SimpleDateFormat("dd/MM/yy").format(date);
 	}
 
 	/**

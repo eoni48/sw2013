@@ -71,7 +71,7 @@ public class CreateEvent extends HttpServlet{
 		Date date = new Date(calendar.getTimeInMillis());
 
 		
-		String description = request.getParameter("descipcion");
+		String description = request.getParameter("descripcion");
 		String plus = request.getParameter("adicional");
 		
 		String aux_sport = request.getParameter("deporte");
