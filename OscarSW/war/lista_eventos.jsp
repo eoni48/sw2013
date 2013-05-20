@@ -13,6 +13,10 @@
 	<title>Insert title here</title>
 </head>
 <body>
+<%
+session = request.getSession();
+String type = (String)session.getAttribute("type");
+%>
 	<div id="contenedor">
 		<div id="cabezera">
 			<div id="logo">
@@ -24,8 +28,6 @@
 						<li class="inicio"><a href="index.html">Inicio </a></li>
 						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
 						<%
-						session =  request.getSession();
-						String type = (String)session.getAttribute("type");
 						if(type != null && type.equals("organizer")){
 						%>
 						<li class="ultimo"><a href="formulario_evento.html">Crear evento</a></li>
@@ -158,11 +160,11 @@
 									%>
 									<div class="evento" >
 										<div class="evento_izquierda">
-											<a href="evento.html?id=<%out.println(e.getKey());%>"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+											<a href="evento.jsp?id=<%out.println(e.getKey());%>"><img src="res/dsa.jpg" alt="logo del evento"/></a>
 										</div>
 										<div class="evento_centro">
 											<div class="titulo">
-												<a href="evento.html?id=<%out.println(e.getKey());%>"><span><%out.println(e.getName()); %></span></a>
+												<a href="evento.jsp?id=<%out.println(e.getKey());%>"><span><%out.println(e.getName()); %></span></a>
 											</div>
 											<div class="descripcion">
 												<p><%out.println(e.getDescription()); %></p>
