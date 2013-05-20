@@ -12,8 +12,6 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-import com.google.appengine.api.datastore.Key;
-
 /**
  * @author roni
  *
@@ -82,6 +80,13 @@ public class Event {
 	 */
 	public Long getKey() {
 		return key;
+	}
+
+	/**
+	 * @return the organizer
+	 */
+	public String getOrganizer() {
+		return organizer;
 	}
 
 	/**

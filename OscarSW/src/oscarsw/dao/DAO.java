@@ -10,6 +10,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+
 import oscarsw.data.Competitor;
 import oscarsw.data.Event;
 import oscarsw.data.Organizer;
@@ -133,22 +136,16 @@ public class DAO {
 	    }
 		return events;
 	}
-	public List<Event> getEvents(Organizer sport){
+	public Event getEvent(Long id){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
-		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
-		List<Event>  events = null;
-		try {
-			Query query = pm.newQuery(Event.class," sport == '"+sport+"' order by date asc");
-			events = (List<Event>) query.execute();
-			
-			if(events.isEmpty()){
-				return null;
-			}
-		
+		Event  event = null;
+		Key key = KeyFactory.createKey(Event.class.getSimpleName(), id);
+		try{
+			event = pm.getObjectById(Event.class,key);
 		}
-		finally {
-	        pm.close();
-	    }
-		return events;
+		catch(Exception e){
+			return null;
+		}
+		return event;
 	}
 }
