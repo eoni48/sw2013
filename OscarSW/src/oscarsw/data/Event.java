@@ -28,7 +28,7 @@ public class Event {
 	
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Key key;
+	private Long key;
 	
 	@Persistent
 	private String name;
@@ -80,7 +80,7 @@ public class Event {
 	/**
 	 * @return the key
 	 */
-	public Key getKey() {
+	public Long getKey() {
 		return key;
 	}
 
