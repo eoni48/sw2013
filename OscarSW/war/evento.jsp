@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="oscarsw.data.Competitor"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="oscarsw.data.Event"%>
 <%@page import="oscarsw.dao.DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -98,6 +100,7 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					<div class="imagen">
 						<img src="res/dsa.jpg" alt="logo" />
 					</div>
+					
 					<div>
 						<%if(nick != null && event.getOrganizer().equals(nick)){%>
 							<a href="formulario_evento.html">Modificar</a>
@@ -106,11 +109,35 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					
 				</div>
 				<div class="inferior">
-					<form action="URL">
-						<fieldset class="inputs_evento">
-							<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
-						</fieldset>
-					</form>
+					<%if(nick != null && event.getOrganizer().equals(nick)){%>
+						<div class="subtitulo">
+						<h5>Participantes</h5>
+						<%
+						ArrayList<String> comps = event.getCompetitors();
+						for(String comp : comps){
+						%>
+						<p><%out.println(comp);%></p>
+						<%	
+						}
+						%>
+						</div>
+					<% }%>
+					<div>
+						<p>Participantes:<%out.println(event.getNumCompetitor());%></p>
+					</div>
+					<%
+					if(type != null ){
+						if(!type.equals("organizer")){
+						%>
+						<a href="/apuntar_evento?id=<%out.println(event.getKey());%>">¡Apúntate!</a>
+						<%
+						}
+		
+					}
+					else{
+					%>
+						<a href="/apuntar_evento?id=<%out.println(event.getKey());%>">¡Apúntate!</a>
+					<%} %>
 				</div>
 			</div>
 		</div><!-- cuerpo -->

@@ -174,13 +174,28 @@ String type = (String)session.getAttribute("type");
 										<div class="evento_derecha">
 											<div class="fecha">
 												<span><%  out.println(e.dateToString()); %></span>
-											</div>
-											
-											<form action="URL">
+											</div>	
+											<%
+											if(type != null ){
+												if(!type.equals("organizer")){
+												%>
+												<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
+												<%
+												}
+								
+											}
+											else{
+											%>
+												<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
+											<%} %>
+					
+											<!--  <form method="get" action="/apuntar_evento">
 												<fieldset class="inputs_evento">	
-													<input class="boton_inscribirse" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+													<input  type="text" name="id" value="<%out.println(e.getKey());%>"/>
+													<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>
 												</fieldset>
 											</form>
+											-->
 										</div>
 									</div>
 									<%	

@@ -56,4 +56,13 @@
 		<servlet-name>newEvent</servlet-name>
 		<url-pattern>/nuevo_evento</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>signEvent</servlet-name>
+		<servlet-class>oscarsw.client.SignEvent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>signEvent</servlet-name>
+		<url-pattern>/apuntar_evento</url-pattern>
+	</servlet-mapping>
 </web-app>
