@@ -232,4 +232,10 @@ public class Event {
 	public ArrayList<String> getCompetitors() {
 		return competitors;
 	}
+	public void addCompetitor(String comp){
+		competitors.add(comp);
+	}
+	public int getNumCompetitor(){
+		return competitors.size();
+	}
 }

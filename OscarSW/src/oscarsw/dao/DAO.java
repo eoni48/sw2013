@@ -124,7 +124,7 @@ public class DAO {
 		List<Event>  events = null;
 		try {
 			Query query = pm.newQuery(Event.class);
-			query.setOrdering("date desc");
+			query.setOrdering("date asc");
 			events = (List<Event>) query.execute();
 			if(events.isEmpty()){
 				return null;
@@ -145,6 +145,27 @@ public class DAO {
 		}
 		catch(Exception e){
 			return null;
+		}
+		finally{
+			pm.close();
+		}
+		
+		return event;
+	}
+	
+	public Event addSignEvent(Long id,String comp){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Event  event = null;
+		Key key = KeyFactory.createKey(Event.class.getSimpleName(), id);
+		try{
+			event = pm.getObjectById(Event.class,key);
+			event.addCompetitor(comp);
+		}
+		catch(Exception e){
+			return null;
+		}
+		finally{
+			pm.close();
 		}
 		return event;
 	}
