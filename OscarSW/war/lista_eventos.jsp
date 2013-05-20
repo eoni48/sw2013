@@ -158,11 +158,11 @@
 									%>
 									<div class="evento" >
 										<div class="evento_izquierda">
-											<a href="evento.html"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+											<a href="evento.html?id=<%out.println(e.getKey());%>"><img src="res/dsa.jpg" alt="logo del evento"/></a>
 										</div>
 										<div class="evento_centro">
 											<div class="titulo">
-												<a onclick="response.sendRedirect("evento.jsp?id="+e.getKey());"><span><%out.println(e.getName()); %></span></a>
+												<a href="evento.html?id=<%out.println(e.getKey());%>"><span><%out.println(e.getName()); %></span></a>
 											</div>
 											<div class="descripcion">
 												<p><%out.println(e.getDescription()); %></p>
