@@ -134,12 +134,30 @@ public class DAO {
 
 		return user;
 	}
-	public List<Event> getEvents(){
+	public List<Event> getEvents(String name,String province,String sport){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
 		List<Event>  events = null;
+		String filter = "";
 		try {
 			Query query = pm.newQuery(Event.class);
+			if(name != null){
+				filter+= "name == '"+name+"' ";
+			}
+			if(province != null){
+				if(!filter.equals("")){
+					filter+=" && ";
+				}
+				filter+="province == '"+province+"'";
+			}
+			if(sport != null){
+				if(!filter.equals("")){
+					filter+=" && ";
+				}
+				filter+="sport == '"+sport+"'";
+			}
+			if(!filter.equals(""))
+				query.setFilter(filter);
 			query.setOrdering("date asc");
 			events = (List<Event>) query.execute();
 			if(events.isEmpty()){

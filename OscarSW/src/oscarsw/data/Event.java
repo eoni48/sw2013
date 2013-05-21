@@ -20,7 +20,6 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Event {
 	
-	public enum Type{pop,land}
 	public enum Sport{athletics,footbal,basket,other}
 
 	
@@ -43,8 +42,6 @@ public class Event {
 	@Persistent
 	private Date date;
 	@Persistent
-	private Type type;
-	@Persistent
 	private boolean free;
 	@Persistent
 	private float cost;
@@ -57,7 +54,7 @@ public class Event {
 	@Persistent
 	private ArrayList<String> competitors;
 	
-	public Event(String name,String organizer,String city,String province,String place,Date date,Type type,
+	public Event(String name,String organizer,String city,String province,String place,Date date,
 			boolean free,float cost,String description,String plus,Sport sport){
 		
 		this.name = name;
@@ -66,7 +63,6 @@ public class Event {
 		this.province = province;
 		this.place = place;
 		this.date = date;
-		this.type = type;
 		this.free = free;
 		this.cost = cost;
 		this.description = description;
@@ -146,20 +142,6 @@ public class Event {
 	 */
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	/**
-	 * @return the type
-	 */
-	public Type getType() {
-		return type;
-	}
-
-	/**
-	 * @param type the type to set
-	 */
-	public void setType(Type type) {
-		this.type = type;
 	}
 
 	/**

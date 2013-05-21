@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import oscarsw.dao.DAO;
 import oscarsw.data.Event;
 import oscarsw.data.Event.Sport;
-import oscarsw.data.Event.Type;
 
 
 /**
@@ -78,7 +77,7 @@ public class CreateEvent extends HttpServlet{
 		Sport sport = convertToSport(aux_sport);
 		
 		
-		Event event = new Event(name, organizer, city, province, place, date, Type.pop, free, cost, description, plus, sport);
+		Event event = new Event(name, organizer, city, province, place, date, free, cost, description, plus, sport);
 		
 		(DAO.getInstance()).addEvent(event);
 		
