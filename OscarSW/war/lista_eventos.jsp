@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="oscarsw.data.Competitor"%>
+<%@page import="oscarsw.data.User"%>
 <%@page import="oscarsw.data.Event"%>
 <%@page import="oscarsw.dao.DAO"%>
 <%@page import="java.util.List"%>
@@ -14,8 +16,10 @@
 </head>
 <body>
 <%
-session = request.getSession();
+	session = request.getSession();
 String type = (String)session.getAttribute("type");
+String nick = (String)session.getAttribute("nick");
+
 %>
 	<div id="contenedor">
 		<div id="cabezera">
@@ -34,7 +38,7 @@ String type = (String)session.getAttribute("type");
 						<% 
 						}
 						
-						String nick = (String)session.getAttribute("nick");
+						
 						if(nick == null){
 						%>
 							<li class="log"><a href="log.html">Log in </a></li>
@@ -178,10 +182,18 @@ String type = (String)session.getAttribute("type");
 											<%
 											if(type != null ){
 												if(!type.equals("organizer")){
-												%>
-												<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
-												<%
+													if(e.isSign(nick)){
+														%>
+														<a href="/desapuntar_evento?id=<%out.println(e.getKey());%>">Desapuntar</a>
+														<%
+													}
+													else{
+													%>
+													<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
+													<%
+													}
 												}
+												
 								
 											}
 											else{
