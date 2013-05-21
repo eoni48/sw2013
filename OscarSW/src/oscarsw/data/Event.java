@@ -226,6 +226,27 @@ public class Event {
 	}
 
 	/**
+	 * @return the sport
+	 */
+	public Sport getSport() {
+		return sport;
+	}
+
+	/**
+	 * @param sport the sport to set
+	 */
+	public void setSport(Sport sport) {
+		this.sport = sport;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
 	 * @return the competitors
 	 */
 	public ArrayList<String> getCompetitors() {

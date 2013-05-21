@@ -12,7 +12,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/lista_eventos.css"></link>
 	<link type="text/css" rel="stylesheet" href="css/common.css"></link>
-	<title>Insert title here</title>
+	<title>Eventos</title>
 </head>
 <body>
 <%
@@ -34,7 +34,7 @@ String nick = (String)session.getAttribute("nick");
 						<%
 						if(type != null && type.equals("organizer")){
 						%>
-						<li class="ultimo"><a href="formulario_evento.html">Crear evento</a></li>
+						<li class="ultimo"><a href="formulario_evento.jsp">Crear evento</a></li>
 						<% 
 						}
 						

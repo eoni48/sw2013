@@ -103,7 +103,7 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					
 					<div>
 						<%if(nick != null && event.getOrganizer().equals(nick)){%>
-							<a href="formulario_evento.html">Modificar</a>
+							<a href="formulario_evento.jsp?id=<%out.println(id);%>">Modificar</a>
 						<% }%>
 					</div>
 					

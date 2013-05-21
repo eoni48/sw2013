@@ -1,3 +1,2 @@
 # Module oscarsw
 # RPC service class, partial path of RPC policy file
-oscarsw.client.GreetingService, BB248EAE896929310381945EC3DB73BC.gwt.rpc

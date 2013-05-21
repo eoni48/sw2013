@@ -1,13 +1,13 @@
 //Es gratuito
-jQuery(".derecha :input:radio[name=es_gratis]").click(function() {
+jQuery(".derecha :input:radio[value=si]").click(function() {
 	jQuery(".derecha .precio").css("display","none");
 	$(this).prop('checked',true);
-	jQuery(".derecha :input:radio[name=es_pago]").prop('checked',false);
+	jQuery(".derecha :input:radio[value=no]").prop('checked',false);
 });
-jQuery(".derecha :input:radio[name=es_pago]").click(function() {
+jQuery(".derecha :input:radio[value=no]").click(function() {
 	jQuery(".derecha .precio").css("display","block");
 	$(this).prop('checked',true);
-	jQuery(".derecha :input:radio[name=es_gratis]").prop('checked',false);
+	jQuery(".derecha :input:radio[value=si]").prop('checked',false);
 });
 
 //Es federado
