@@ -123,8 +123,26 @@ if(id != null){
 							
 							<label>Comunidad Autonoma:</label>
 							<br />
-							<input id="comunidad" type="text" name="comunidad" value="<%out.println(province);%>"/>
-							
+							<select id="comunidad" name="comunidad">  
+					        	<option <%if(province.equals("todo")){%> selected="selected" <%} %>  value="todo">(Toda España)</option>  
+					            <option <%if(province.equals("andalucia")){%> selected="selected" <%} %>  value="andalucia">Andalucía</option>  
+					            <option <%if(province.equals("aragon")){%> selected="selected" <%} %>  value="aragon">Aragón</option>  
+					            <option <%if(province.equals("asturias")){%> selected="selected" <%} %>  value="asturias">Asturias</option>  
+					            <option <%if(province.equals("baleares")){%> selected="selected" <%} %>  value="baleares">Baleares</option>  
+					            <option <%if(province.equals("canarias")){%> selected="selected" <%} %>  value="canarias">Canarias</option>  
+					            <option <%if(province.equals("cantabria")){%> selected="selected" <%} %>  value="cantabria">Cantabria</option>  
+					            <option <%if(province.equals("castilla_mancha")){%> selected="selected" <%} %>  value="castilla_mancha">Castilla la Mancha</option>  
+					            <option <%if(province.equals("castilla_leon")){%> selected="selected" <%} %>  value="castilla_leon">Castilla y León</option>  
+					            <option <%if(province.equals("catalona")){%> selected="selected" <%} %>  value="catalona">Cataluña</option>
+					            <option <%if(province.equals("extremadura")){%> selected="selected" <%} %>  value="extremadura">Extremadura</option>  
+					            <option <%if(province.equals("galicia")){%> selected="selected" <%} %>  value="galicia">Galicia</option>
+					            <option <%if(province.equals("rioja")){%> selected="selected" <%} %>  value="rioja">La Rioja</option> 
+					            <option <%if(province.equals("madrid")){%> selected="selected" <%} %>  value="madrid">Madrid</option>
+					            <option <%if(province.equals("murcia")){%> selected="selected" <%} %>  value="murcia">Murcia</option>  
+					            <option <%if(province.equals("navarra")){%> selected="selected" <%} %>  value="navarra">Navarra</option> 
+					            <option <%if(province.equals("vasco")){%> selected="selected" <%} %>  value="vasco">País Vasco</option>
+					            <option <%if(province.equals("valencia")){%> selected="selected" <%} %>  value="valencia">Valencia</option>        
+			        		</select> 	
 							<br />
 							<br />
 							

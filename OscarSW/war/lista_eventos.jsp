@@ -20,6 +20,18 @@
 String type = (String)session.getAttribute("type");
 String nick = (String)session.getAttribute("nick");
 
+String name = request.getParameter("nombre");
+String province = request.getParameter("comunidad");
+if(province != null &&  province.equals("todo")){
+	province = null;
+}
+String sport = request.getParameter("deporte");
+if(sport !=null && sport.equals("todo")){
+	sport = null;
+}
+
+List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
+
 %>
 	<div id="contenedor">
 		<div id="cabezera">
@@ -63,12 +75,12 @@ String nick = (String)session.getAttribute("nick");
 		<div class="cuerpo">
 			<div class="contenido">
 				<div id="buscador">
-					<form id="form-buscador" action="URL" enctype="text/plain">
+					<form id="form-buscador" method="get" action="/lista_eventos.jsp" enctype="text/plain">
 					    <fieldset id="inputs_buscador">			
 					    	<label>Buscar:</label>  	  
 					        <input id="nombre" type="text"/>	
 					        <label> en </label>  	  
-					        <select id="categoria" name="categoria">  
+					        <select id=comunidad name="comunidad">  
 					        	<option value="todo">(Toda España)</option>  
 					            <option value="andalucia">Andalucía</option>  
 					            <option value="aragon">Aragón</option>  
@@ -89,12 +101,12 @@ String nick = (String)session.getAttribute("nick");
 					            <option value="valencia">Valencia</option>        
 			        		</select> 	
 			        		<label > de  </label>  	      
-			        		<select id="deporte" name="categoria">  
+			        		<select id="deporte" name="deporte">  
 					        	<option value="todo">(Cualquier deporte)</option>  
-					            <option value="atletismo">Atletismo</option>  
-					            <option value="baloncesto">Baloncesto</option>  
-					            <option value="futbol">Fútbol</option>  
-					            <option value="varios">Varios</option>  
+					            <option value="athletics">Atletismo</option>  
+					            <option value="basket">Baloncesto</option>  
+					            <option value="footbal">Fútbol</option>  
+					            <option value="other">Otros</option>  
 			        		</select> 	          		
 			        		<input id="boton-buscar" type="submit" title="Buscar eventos" value="¡Buscar!"/>
 					    </fieldset>	        	
@@ -108,16 +120,61 @@ String nick = (String)session.getAttribute("nick");
 								<p>Comunidades:</p>
 								<ul>
 									<li>
-										Andalucia
+										<a href="lista_eventos.jsp?
+										<%
+											if(province!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Todas</a>
+										
 									</li>
 									<li>
-										Aragon
+										<a href="lista_eventos.jsp?comunidad=
+											<%
+											out.println("andalucia");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+											%>">Andalucia</a>
 									</li>
 									<li>
-										Asturias
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("aragon");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Aragon</a>
+										
 									</li>
 									<li>
-										Baleares
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("asturias");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Asturias</a>
+										
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("baleares");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Baleares</a>
+										
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("rioja");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">La Rioja</a>
 									</li>
 									<li>
 										Más...
@@ -128,27 +185,53 @@ String nick = (String)session.getAttribute("nick");
 								<p>Deportes:</p>
 								<ul>
 									<li>
-										Atletismo
+										<a href="lista_eventos.jsp?
+										<%
+											if(province!= null){
+												out.println("&comunidad="+province);
+											}
+										%>">Todos</a>
+										
 									</li>
 									<li>
-										Baloncesto
+										<a href="lista_eventos.jsp?deporte=
+										<%
+											out.println("athletics");
+											if(province!= null){
+												out.println("&comunidad="+province);
+											}
+										%>">Atletismo</a>
+										
+									</li>
+									
+									<li>
+										<a href="lista_eventos.jsp?deporte=
+										<%
+											out.println("basket");
+											if(province!= null){
+												out.println("&comunidad="+province);
+											}
+										%>">Baloncesto</a>
+										
 									</li>
 									<li>
-										Fútbol
+										<a href="lista_eventos.jsp?deporte=
+										<%
+											out.println("footbal");
+											if(province!= null){
+												out.println("&comunidad="+province);
+											}
+										%>">Fútbol</a>
+										
 									</li>
 									<li>
-										Varios
-									</li>
-								</ul>
-							</li>
-							<li>
-								<p>Tipo:</p>
-								<ul>
-									<li>
-										Popular
-									</li>
-									<li>
-										Federados
+										<a href="lista_eventos.jsp?deporte=
+										<%
+											out.println("other");
+											if(sport!= null){
+												out.println("&deporte="+province);
+											}
+										%>">Otros</a>	
 									</li>
 								</ul>
 							</li>
@@ -158,7 +241,7 @@ String nick = (String)session.getAttribute("nick");
 					<div class="eventos">
 							<%
 							//response.sendRedirect("evento.jsp?id"+e.getKey());
-								List<Event> events = (DAO.getInstance()).getEvents();
+								
 								if(events != null){
 									for(Event e : events){
 									%>
