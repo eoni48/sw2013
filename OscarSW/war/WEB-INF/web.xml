@@ -65,4 +65,13 @@
 		<servlet-name>signEvent</servlet-name>
 		<url-pattern>/apuntar_evento</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>outEvent</servlet-name>
+		<servlet-class>oscarsw.client.OutEvent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>outEvent</servlet-name>
+		<url-pattern>/desapuntar_evento</url-pattern>
+	</servlet-mapping>
 </web-app>
