@@ -78,7 +78,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 					<form id="form-buscador" method="get" action="/lista_eventos.jsp" enctype="text/plain">
 					    <fieldset id="inputs_buscador">			
 					    	<label>Buscar:</label>  	  
-					        <input id="nombre" type="text"/>	
+					        <input id="nombre" type="text" name="nombre"/>	
 					        <label> en </label>  	  
 					        <select id=comunidad name="comunidad">  
 					        	<option value="todo">(Toda España)</option>  
