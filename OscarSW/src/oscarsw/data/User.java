@@ -3,6 +3,8 @@
  */
 package oscarsw.data;
 
+import java.util.ArrayList;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
@@ -21,9 +23,12 @@ public class User {
 	@Persistent
 	private String pass;
 	
+	
+	
 	public User(String nick,String pass){
 		this.nick = nick;
 		this.pass = pass;
+		
 	}
 	/**
 	 * @return the nick
@@ -43,4 +48,5 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+	
 }

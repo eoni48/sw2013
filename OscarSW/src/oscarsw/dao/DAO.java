@@ -95,6 +95,22 @@ public class DAO {
 
 		return user;
 	}
+	public Competitor getCompetitor(String nick){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Competitor  user = null;
+		Key key = KeyFactory.createKey(Competitor.class.getSimpleName(), nick);
+		try{
+			user = pm.getObjectById(Competitor.class,key);
+		}
+		catch(Exception e){
+			return null;
+		}
+		finally{
+			pm.close();
+		}
+		
+		return user;
+	}
 	public Organizer getOrganizer(String nick,String pass){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
@@ -153,20 +169,48 @@ public class DAO {
 		return event;
 	}
 	
-	public Event addSignEvent(Long id,String comp){
+	public void addSignEvent(Long id,String comp){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		Event  event = null;
-		Key key = KeyFactory.createKey(Event.class.getSimpleName(), id);
+		Competitor  user = null;
+		Key key_event = KeyFactory.createKey(Event.class.getSimpleName(), id);
+		Key key_comp = KeyFactory.createKey(Competitor.class.getSimpleName(), comp);
 		try{
-			event = pm.getObjectById(Event.class,key);
+			event = pm.getObjectById(Event.class,key_event);
 			event.addCompetitor(comp);
+			
+			user = pm.getObjectById(Competitor.class,key_comp);
+			user.addEvent(event.getKey());
+			
 		}
 		catch(Exception e){
-			return null;
+			return;
 		}
 		finally{
 			pm.close();
 		}
-		return event;
+		//return event;
+	}
+	public void removeSignEvent(Long id,String comp){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Event  event = null;
+		Competitor  user = null;
+		Key key_event = KeyFactory.createKey(Event.class.getSimpleName(), id);
+		Key key_comp = KeyFactory.createKey(Competitor.class.getSimpleName(), comp);
+		try{
+			event = pm.getObjectById(Event.class,key_event);
+			event.removeCompetitor(comp);
+			
+			user = pm.getObjectById(Competitor.class,key_comp);
+			user.removeEvent(event.getKey());
+			
+		}
+		catch(Exception e){
+			return;
+		}
+		finally{
+			pm.close();
+		}
+		//return event;
 	}
 }

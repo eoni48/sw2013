@@ -30,4 +30,5 @@ public class Organizer extends User {
 		this.NIF = NIF;
 		events = new ArrayList<Key>();
 	}
+	
 }

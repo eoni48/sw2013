@@ -141,7 +141,6 @@ public class Event {
 	public String dateToString(){
 		return new SimpleDateFormat("dd/MM/yy").format(date);
 	}
-
 	/**
 	 * @param date the date to set
 	 */
@@ -234,6 +233,12 @@ public class Event {
 	}
 	public void addCompetitor(String comp){
 		competitors.add(comp);
+	}
+	public void removeCompetitor(String comp){
+		competitors.remove(comp);
+	}
+	public boolean isSign(String comp){
+		return competitors.contains(comp);
 	}
 	public int getNumCompetitor(){
 		return competitors.size();
