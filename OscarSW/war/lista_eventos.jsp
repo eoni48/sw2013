@@ -122,7 +122,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 									<li>
 										<a href="lista_eventos.jsp?
 										<%
-											if(province!= null){
+											if(sport!= null){
 												out.println("&deporte="+sport);
 											}
 										%>">Todas</a>

@@ -54,10 +54,40 @@ public class DAO {
 			pm.close();
 		}
 	}
-	public void addEvent(Event event){
+	public void addEvent(Event event,String org){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Organizer  user = null;
+		Key key = KeyFactory.createKey(Organizer.class.getSimpleName(), org);
+			
 		try{
 			pm.makePersistent(event);
+			user = pm.getObjectById(Organizer.class,key);
+			user.addEvent(event.getKey());
+			
+		}
+		finally{
+			pm.close();
+		}
+	}
+	public void updateEvent(Event event,Long id){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Event  e = null;
+		Key key = KeyFactory.createKey(Event.class.getSimpleName(),id);
+		try{
+			e = pm.getObjectById(Event.class,key);
+			if(e != null){
+				e.setCity(event.getCity());
+				e.setCost(event.getCost());
+				e.setDate(event.getDate());
+				e.setDescription(event.getDescription());
+				e.setFree(event.isFree());
+				e.setName(event.getName());
+				e.setPlace(event.getPlace());
+				e.setPlus(event.getPlus());
+				e.setProvince(event.getProvince());
+				e.setSport(event.getSport());
+			}
+			
 		}
 		finally{
 			pm.close();

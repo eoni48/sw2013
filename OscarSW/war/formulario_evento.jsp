@@ -57,6 +57,9 @@ if(id != null){
 		response.sendRedirect("lista_eventos.jsp");
 	}
 }
+else{
+	id = "";
+}
 
 %>
 	<div id="contenedor">
@@ -123,8 +126,7 @@ if(id != null){
 							
 							<label>Comunidad Autonoma:</label>
 							<br />
-							<select id="comunidad" name="comunidad">  
-					        	<option <%if(province.equals("todo")){%> selected="selected" <%} %>  value="todo">(Toda España)</option>  
+							<select id="comunidad" name="comunidad">  	   
 					            <option <%if(province.equals("andalucia")){%> selected="selected" <%} %>  value="andalucia">Andalucía</option>  
 					            <option <%if(province.equals("aragon")){%> selected="selected" <%} %>  value="aragon">Aragón</option>  
 					            <option <%if(province.equals("asturias")){%> selected="selected" <%} %>  value="asturias">Asturias</option>  
@@ -178,9 +180,10 @@ if(id != null){
 							<textarea rows="10" cols="100" name="adicional"><%out.println(plus);%></textarea>
 							<br />
 							<br />
+							<input name="id" class="info" type="text" value="<%out.println(id);%>"/>
 							<div class="botones">
 								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar" name="aceptar"/>
-								<input id="boton_cancelar" type="submit" title="cancelar" value="Cancelar" name="cancelar"/>
+								<input id="boton_cancelar" type="button" onclick="window.location='lista_eventos.jsp'" title="cancelar" value="Cancelar" name="cancelar"/>
 							</div>
 							
 						</fieldset>

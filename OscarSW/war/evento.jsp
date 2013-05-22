@@ -24,6 +24,8 @@ String nick = (String)session.getAttribute("nick");
 String id = request.getParameter("id");
 
 Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
+
+
 %>
 	<div id="contenedor">
 		<div id="cabezera">
@@ -91,7 +93,7 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					<div class="subtitulo">
 						<h5>Localización</h5>
 						<p>Ciudad: <%out.println(event.getCity());%></p> 
-						<p>Comunidad: <%out.println(event.getProvince());%></p> 
+						<p>Comunidad: <%out.println(event.provinceToString());%></p> 
 						<p>Lugar: <%out.println(event.getPlace());%></p> 
 					</div>
 					

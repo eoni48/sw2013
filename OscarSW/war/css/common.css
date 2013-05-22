@@ -120,3 +120,6 @@ select:focus{
 	display: inline-block;
 	
 }
+.info{
+	display: none;
+}

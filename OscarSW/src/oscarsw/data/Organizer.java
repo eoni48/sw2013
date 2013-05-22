@@ -22,13 +22,16 @@ public class Organizer extends User {
 	@Persistent
 	private String NIF;
 	@Persistent
-	private ArrayList<Key> events;
+	private ArrayList<Long> events;
 	
 	public Organizer(String nick, String pass,String name,String NIF) {
 		super(nick, pass);
 		this.name = name;
 		this.NIF = NIF;
-		events = new ArrayList<Key>();
+		events = new ArrayList<Long>();
+	}
+	public void addEvent(Long key){
+		events.add(key);
 	}
 	
 }

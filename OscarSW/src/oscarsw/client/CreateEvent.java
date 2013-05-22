@@ -71,15 +71,29 @@ public class CreateEvent extends HttpServlet{
 
 		
 		String description = request.getParameter("descripcion");
+		if(description == null){
+			description = "";
+		}
 		String plus = request.getParameter("adicional");
+		if(plus == null){
+			plus = "";
+		}
 		
 		String aux_sport = request.getParameter("deporte");
 		Sport sport = convertToSport(aux_sport);
 		
+		String aux_id = request.getParameter("id");
 		
 		Event event = new Event(name, organizer, city, province, place, date, free, cost, description, plus, sport);
-		
-		(DAO.getInstance()).addEvent(event);
+		if(aux_id == null || aux_id.equals("")){
+			
+			
+			(DAO.getInstance()).addEvent(event,organizer);
+		}
+		else{
+			Long id = Long.valueOf(aux_id);
+			(DAO.getInstance()).updateEvent(event, id);
+		}
 		
 		response.sendRedirect("/lista_eventos.jsp");
 	}

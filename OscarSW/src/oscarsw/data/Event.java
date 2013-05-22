@@ -246,4 +246,59 @@ public class Event {
 	public int getNumCompetitor(){
 		return competitors.size();
 	}
+	public String provinceToString(){
+		String string = "";
+		if(province.equals("andalucia")){
+			string =  "Anadalucia";
+		}
+		else if(province.equals("aragon")){
+			string =  "Aragón";
+		}
+		else if(province.equals("asturias")){
+			string =  "Asturias";
+		}
+		else if(province.equals("baleares")){
+			string =  "Anadalucia";
+		}
+		else if(province.equals("canarias")){
+			string =  "Islas Baleares";
+		}
+		else if(province.equals("cantabria")){
+			string =  "Cantabria";
+		}
+		else if(province.equals("castilla_mancha")){
+			string =  "Castilla la Mancha";
+		}
+		else if(province.equals("castilla_leon")){
+			string =  "Castilla y León";
+		}
+		else if(province.equals("catalona")){
+			string =  "Anadalucia";
+		}
+		else if(province.equals("extremadura")){
+			string =  "Extremadura";
+		}
+		else if(province.equals("galicia")){
+			string =  "Galicia";
+		}
+		else if(province.equals("rioja")){
+			string =  "La Rioja";
+		}
+		else if(province.equals("madrid")){
+			string =  "Comunidad de Madrid";
+		}
+		else if(province.equals("murcia")){
+			string =  "Murcia";
+		}
+		else if(province.equals("navarra")){
+			string =  "Navarra";
+		}
+		else if(province.equals("vasco")){
+			string =  "País Vasco";
+		}
+		else if(province.equals("valencia")){
+			string =  "Comunidad Valenciana";
+		}
+		return string;
+	}
 }
