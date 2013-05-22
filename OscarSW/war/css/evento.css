@@ -58,6 +58,9 @@ h1 {
 .inputs_evento input{
 	width:30%;
 }
+.inputs_evento .boton_editar{
+	width:100%;
+}
 .inputs_evento input:focus{  
     border: 2px solid #AFCDD8;  
     background-color: #EBF2F4;  

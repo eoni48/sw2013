@@ -263,28 +263,50 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 												<span><%  out.println(e.dateToString()); %></span>
 											</div>	
 											<%
+											int sign = 1;							
 											if(type != null ){
 												if(!type.equals("organizer")){
 													if(e.isSign(nick)){
-														%>
-														<a href="/desapuntar_evento?id=<%out.println(e.getKey());%>">Desapuntar</a>
-														<%
+														sign = 2;
 													}
-													else{
-													%>
-													<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
-													<%
-													}
+													
+												}
+												else{
+													sign = 3;
 												}
 												
 								
 											}
-											else{
+										
+											
+											if(sign == 1){
+												%>
+												<form method="post" action="/apuntar_evento">
+													<fieldset class="inputs_evento">	
+														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>"/>
+														<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+													</fieldset>
+												</form>
+												<%
+											}
+											
+											else if(sign == 2){
+												%>
+												<form method="post" action="/desapuntar_evento">
+													<fieldset class="inputs_evento">	
+														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>"/>
+														<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="Desapuntarse"/>
+													</fieldset>
+												</form>
+												<%
+											}
+											
 											%>
-												<a href="/apuntar_evento?id=<%out.println(e.getKey());%>">¡Apúntate!</a>
-											<%} %>
+											
 					
-											<!--  <form method="get" action="/apuntar_evento">
+											<!--
+												<a href="/desapuntar_evento?id=<%out.println(e.getKey());%>">Desapuntar</a>  
+											<form method="get" action="/apuntar_evento">
 												<fieldset class="inputs_evento">	
 													<input  type="text" name="id" value="<%out.println(e.getKey());%>"/>
 													<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>

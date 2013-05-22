@@ -105,7 +105,13 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					
 					<div>
 						<%if(nick != null && event.getOrganizer().equals(nick)){%>
-							<a href="formulario_evento.jsp?id=<%out.println(id);%>">Modificar</a>
+							<!--  <a href="formulario_evento.jsp?id=<%out.println(id);%>">Modificar</a>-->	
+							<form method="get" action="/formulario_evento.jsp">
+								<fieldset class="inputs_evento">	
+									<input class="info" type="text" name="id" value="<%out.println(id);%>"/>
+									<input class="boton_editar" type="submit" title="Modificar" value="Editar"/>
+								</fieldset>
+							</form>
 						<% }%>
 					</div>
 					
@@ -128,18 +134,45 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 						<p>Participantes:<%out.println(event.getNumCompetitor());%></p>
 					</div>
 					<%
+					int sign = 1;							
 					if(type != null ){
 						if(!type.equals("organizer")){
-						%>
-						<a href="/apuntar_evento?id=<%out.println(event.getKey());%>">¡Apúntate!</a>
-						<%
+							if(event.isSign(nick)){
+								sign = 2;
+							}
+							
 						}
+						else{
+							sign = 3;
+						}
+						
 		
 					}
-					else{
+				
+					
+					if(sign == 1){
+						%>
+						<form method="post" action="/apuntar_evento">
+							<fieldset class="inputs_evento">	
+								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>"/>
+								<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>
+							</fieldset>
+						</form>
+						<%
+					}
+					
+					else if(sign == 2){
+						%>
+						<form method="post" action="/desapuntar_evento">
+							<fieldset class="inputs_evento">	
+								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>"/>
+								<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="Desapuntarse"/>
+							</fieldset>
+						</form>
+						<%
+					}
+					
 					%>
-						<a href="/apuntar_evento?id=<%out.println(event.getKey());%>">¡Apúntate!</a>
-					<%} %>
 				</div>
 			</div>
 		</div><!-- cuerpo -->
