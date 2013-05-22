@@ -135,6 +135,7 @@ public class Event {
 		
 	}
 	public String dateToString(){
+		//return date.toString();
 		return new SimpleDateFormat("dd/MM/yy").format(date);
 	}
 	/**

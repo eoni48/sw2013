@@ -10,13 +10,13 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
-
 import oscarsw.data.Competitor;
 import oscarsw.data.Event;
 import oscarsw.data.Organizer;
 import oscarsw.data.User;
+
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 
 /**
  * @author roni
@@ -188,12 +188,11 @@ public class DAO {
 			}
 			if(!filter.equals(""))
 				query.setFilter(filter);
-			query.setOrdering("date asc");
+			query.setOrdering("this.date ASC");
 			events = (List<Event>) query.execute();
 			if(events.isEmpty()){
 				return null;
 			}
-		
 		}
 		finally {
 	        pm.close();
