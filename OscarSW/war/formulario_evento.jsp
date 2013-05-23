@@ -20,8 +20,11 @@
 <body>
 <%
 
-session = request.getSession();
+//session = request.getSession();
 String type = (String)session.getAttribute("type");
+if(type == null ||  type.equals("competitor")){
+	response.sendRedirect("lista_eventos.jsp");
+}
 String nick = (String)session.getAttribute("nick");
 
 String id = request.getParameter("id");
@@ -42,6 +45,9 @@ if(id != null){
 	
 	
 	if(event != null){
+		if(!event.getOrganizer().equals(nick)){
+			response.sendRedirect("lista_eventos.jsp");
+		}
 		name = event.getName();
 		city = event.getCity();
 		province = event.getProvince();

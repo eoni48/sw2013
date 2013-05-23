@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="oscarsw.data.Event.Sport"%>
 <%@page import="oscarsw.data.Competitor"%>
 <%@page import="oscarsw.data.User"%>
 <%@page import="oscarsw.data.Event"%>
@@ -247,11 +248,25 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 							//response.sendRedirect("evento.jsp?id"+e.getKey());
 								
 								if(events != null){
+									String image;
 									for(Event e : events){
+										image="res/";
+										if(e.getSport() == Sport.athletics){
+											image += "run.jpg";
+										}
+										else if(e.getSport() == Sport.basket){
+											image += "basket.png";
+										}
+										else if(e.getSport() == Sport.footbal){
+											image += "football.png";
+										}
+										else{
+											image += "other.jpg";
+										}
 									%>
 									<div class="evento" >
 										<div class="evento_izquierda">
-											<a href="evento.jsp?id=<%out.println(e.getKey());%>"><img src="res/dsa.jpg" alt="logo del evento"/></a>
+											<a href="evento.jsp?id=<%out.println(e.getKey());%>"><img src="<%out.println(image);%>" alt="logo del evento"/></a>
 										</div>
 										<div class="evento_centro">
 											<div class="titulo">

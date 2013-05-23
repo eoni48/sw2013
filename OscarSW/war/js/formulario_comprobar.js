@@ -12,7 +12,7 @@ function comprobarEvento() {
 		alert("El campo Lugar no debe estar vacio");
 		return;
 	}
-	if(Number(crear_evento.precio.value) == 0.0){
+	if(crear_evento.es_gratis[1].checked && Number(crear_evento.precio.value) == 0.0){
 		alert("El campo Precio no debe ser 0");
 		return;
 	}
