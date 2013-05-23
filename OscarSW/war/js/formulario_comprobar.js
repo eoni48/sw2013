@@ -24,10 +24,8 @@ function comprobarEvento() {
 	crear_evento.submit();
 	
 } 
-function comprobarUsuario() {
-	var nombre = crear_usuario.nick.value;
-	
-	if($.trim(nick.value) == "" ){
+function comprobarUsuario() {	
+	if($.trim(crear_usuario.nick.value) == "" ){
 		alert("El campo nick no debe estar vacio");
 		return;
 		
@@ -52,4 +50,17 @@ function comprobarUsuario() {
 		return;
 	}
 	crear_usuario.submit();
+}
+function comprobarLog(){
+	if($.trim(login.nick.value) == "" ){
+		alert("El campo nick no debe estar vacio");
+		return;
+		
+	}
+	if($.trim(login.pass.value) == "" ){
+		alert("El campo contraseña no debe estar vacio");
+		return;
+		
+	}
+	login.submit();
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -33,12 +35,12 @@
 					<!--<div class="superior">
 						
 					</div>-->
-					<form method="post" action="/login">
+					<form id="login" method="post" action="/login">
 						
-						<fieldset class="izquierda">
+						<fieldset  class="izquierda">
 							<label>Usuario:</label>
 							<br />
-							<input id="nombre" type="text" name="nombre"/>
+							<input id="nick" type="text" name="nick"/>
 							<br />
 							<br />
 							<label>Tipo:</label>
@@ -58,9 +60,16 @@
 							<br />
 						</fieldset>
 						<fieldset class="inferior">
-			
+							<%
+							String error = request.getParameter("error");
+							if(error != null){
+								%>
+								<p class="error"><%out.println(error); %></p>
+								<%
+							}
+							%>
 							<div class="botones">
-								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar"/>
+								<input id="boton_aceptar" type="button" onclick="comprobarLog()" title="aceptar" value="Aceptar"/>
 								<a href="formulario_usuario.jsp">Crear nuevo usuario</a>
 							</div>
 							
@@ -110,5 +119,8 @@
 			
      
 		</div><!-- licencias -->
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/formulario_comprobar.js"></script>
 </body>
 </html>

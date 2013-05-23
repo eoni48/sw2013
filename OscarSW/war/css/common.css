@@ -130,3 +130,6 @@ select:focus{
 .info{
 	display: none;
 }
+.error{
+	color: red;
+}

@@ -85,7 +85,7 @@ else{
 					<!--<div class="superior">
 						
 					</div>-->
-					<form name="crear_evento" method="post" action="/nuevo_evento">
+					<form id="crear_evento" method="post" action="/nuevo_evento">
 						
 						<fieldset class="izquierda">
 							<label>Nombre del evento:</label>

@@ -21,7 +21,7 @@ public class Organizer extends User {
 	@Persistent
 	private ArrayList<Long> events;
 	
-	public Organizer(String nick, String pass,String name,String NIF) {
+	public Organizer(String nick, String pass,String name) {
 		super(nick, pass,name);
 		this.name = name;
 		events = new ArrayList<Long>();

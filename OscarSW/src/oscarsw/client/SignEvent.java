@@ -24,7 +24,7 @@ public class SignEvent extends HttpServlet{
 		String nick = (String) session.getAttribute("nick");
 		String id = request.getParameter("id");
 		if(nick == null){
-			response.sendRedirect("/log.html");
+			response.sendRedirect("/log.jsp");
 			return;
 		}
 		(DAO.getInstance()).addSignEvent(Long.valueOf(id), nick);

@@ -25,9 +25,9 @@ public class CreateUser extends HttpServlet{
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
 		String type = request.getParameter("tipo");
-		String nick = request.getParameter("nick");
-		String pass = request.getParameter("pass");
-		
+		String nick = request.getParameter("nick").trim();
+		String pass = request.getParameter("pass").trim();
+		String name = request.getParameter("nombre").trim();
 		
 		boolean fail = false;
 		User aux =	(DAO.getInstance()).getCompetitor(nick);
@@ -46,16 +46,16 @@ public class CreateUser extends HttpServlet{
 		}
 		
 		if(type.equals("normal")){
-			Competitor user = new Competitor(nick, pass, "pepe");
+			Competitor user = new Competitor(nick, pass, name);
 			(DAO.getInstance()).addCompetitor(user);
 		}
 		else{
-			Organizer user = new Organizer(nick, pass, "manolo", "2");
+			Organizer user = new Organizer(nick, pass,name);
 			(DAO.getInstance()).addOrganizer(user);
 		}
 		
 		
-		response.sendRedirect("/log.html");
+		response.sendRedirect("/log.jsp");
 	}
 
 }

@@ -30,21 +30,20 @@ public class Login extends HttpServlet{
 		String nick = (String) session.getAttribute("nick");
 		
 		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		
 		if(nick == null){	
 			String type = request.getParameter("tipo");
 			User user;
+			String aux_nick = request.getParameter("nick").trim();
+			String pass = request.getParameter("pass").trim();
 			if(type.equals("normal")){
-				user = (DAO.getInstance()).getCompetitor(request.getParameter("nombre"), request.getParameter("pass"));
+				user = (DAO.getInstance()).getCompetitor(nick,pass );
 			}
 			else{
-				user = (DAO.getInstance()).getOrganizer(request.getParameter("nombre"), request.getParameter("pass"));
+				user = (DAO.getInstance()).getOrganizer(aux_nick, pass);
 			}
 			if(user == null){			
-				response.sendRedirect("/log.html");				
-				out.println("<p>Error");
+				response.sendRedirect("/log.jsp?error=Usuario no encontrado");				
+				
 			}
 			else{
 				session.setAttribute("nick", user.getNick());

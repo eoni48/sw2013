@@ -53,7 +53,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 						
 						if(nick == null){
 						%>
-							<li class="log"><a href="log.html">Log in </a></li>
+							<li class="log"><a href="log.jsp">Log in </a></li>
 						<%
 						}
 						else{
