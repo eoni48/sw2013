@@ -141,6 +141,22 @@ public class DAO {
 		
 		return user;
 	}
+	public Organizer getOrganizer(String nick){
+		PersistenceManager pm = pmfInstance.getPersistenceManager();
+		Organizer  user = null;
+		Key key = KeyFactory.createKey(Organizer.class.getSimpleName(), nick);
+		try{
+			user = pm.getObjectById(Organizer.class,key);
+		}
+		catch(Exception e){
+			//return null;
+		}
+		finally{
+			pm.close();
+		}
+		
+		return user;
+	}
 	public Organizer getOrganizer(String nick,String pass){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
