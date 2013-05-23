@@ -282,8 +282,8 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 											}
 											%>
 											<div class="descripcion">
-												<p><%out.println(e.getDescription()); %></p>
-											</div>
+												<p><%out.println(e.getCity()+" ("+e.provinceToString()+")"); %></p>
+											</div> 
 											
 										</div>
 										<div class="evento_derecha">
