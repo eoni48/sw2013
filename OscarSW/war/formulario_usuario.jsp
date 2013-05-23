@@ -10,6 +10,10 @@
 	<title>Nuevo usuario</title>
 </head>
 <body>
+<%
+String type = (String)session.getAttribute("type");
+String nick = (String)session.getAttribute("nick");
+%>
 	<div id="contenedor">
 		<div id="cabezera">
 			<div id="logo">
