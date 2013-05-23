@@ -272,6 +272,15 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 											<div class="titulo">
 												<a href="evento.jsp?id=<%out.println(e.getKey());%>"><span><%out.println(e.getName()); %></span></a>
 											</div>
+											<%
+											if(!e.isFree()){
+												%>
+												<div class="imagen">
+													<img src="res/euro.png" alt="precio"/>
+												</div>
+												<%
+											}
+											%>
 											<div class="descripcion">
 												<p><%out.println(e.getDescription()); %></p>
 											</div>

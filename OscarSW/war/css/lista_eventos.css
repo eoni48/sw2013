@@ -110,6 +110,10 @@ h1 {
 	text-align: left;
 	width: 55%;
 }
+.evento_centro img{
+	float:right;
+	width: 8%;
+}
 .titulo{
 	margin-top: 5px;
 	margin-bottom: 5px;

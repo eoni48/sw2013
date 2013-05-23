@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="oscarsw.data.Event.Sport"%>
 <%@page import="oscarsw.data.Competitor"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="oscarsw.data.Event"%>
@@ -25,6 +26,19 @@ String id = request.getParameter("id");
 
 Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 
+String image="res/";
+if(event.getSport() == Sport.athletics){
+	image += "run.jpg";
+}
+else if(event.getSport() == Sport.basket){
+	image += "basket.png";
+}
+else if(event.getSport() == Sport.footbal){
+	image += "football.png";
+}
+else{
+	image += "other.jpg";
+}
 
 %>
 	<div id="contenedor">
@@ -106,7 +120,7 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 				</div>
 				<div class="derecha">
 					<div class="imagen">
-						<img src="res/dsa.jpg" alt="logo" />
+						<img src="<%out.println(image); %>" alt="logo" />
 					</div>
 					
 					<div>

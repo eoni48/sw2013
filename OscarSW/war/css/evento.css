@@ -51,6 +51,10 @@ h1 {
 .contenido_evento .derecha{
 	float: right;
 	margin-right: 40px;
+	width: 25%;
+}
+.contenido_evento .derecha img{
+	width: 100%;
 }
 .contenido_evento .inferior{
 	clear: both;
