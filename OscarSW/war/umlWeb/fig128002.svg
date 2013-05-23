@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="534" height="356" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="205" y="27" width="3" height="135" />
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="151" y="159" width="57" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="147" y="23" width="58" height="136" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" font-weight="bold" font-style="italic" text-anchor="middle" x="176" y="38">User</text>
+	<line stroke="black" stroke-opacity="1" x1="147" y1="50" x2="205" y2="50" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="151" y="65">nick</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="151" y="90">pass</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="151" y="115">name</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="151" y="140">events</text>
+	<line stroke="black" stroke-opacity="1" x1="147" y1="152" x2="205" y2="152" />
+</g>
+<g>
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="149" y="238" width="3" height="41" />
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="55" y="276" width="97" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="51" y="234" width="98" height="42" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="100" y="249">Competitor</text>
+	<line stroke="black" stroke-opacity="1" x1="51" y1="261" x2="149" y2="261" />
+	<line stroke="black" stroke-opacity="1" x1="51" y1="269" x2="149" y2="269" />
+</g>
+<g>
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="324" y="246" width="3" height="41" />
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="242" y="284" width="85" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="238" y="242" width="86" height="42" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="281" y="257">Organizer</text>
+	<line stroke="black" stroke-opacity="1" x1="238" y1="269" x2="324" y2="269" />
+	<line stroke="black" stroke-opacity="1" x1="238" y1="277" x2="324" y2="277" />
+</g>
+<g>
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="518" y="8" width="3" height="335" />
+	<rect fill="#808080" stroke="none" stroke-opacity="1" x="426" y="340" width="95" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="422" y="4" width="96" height="336" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="470" y="19">Event</text>
+	<line stroke="black" stroke-opacity="1" x1="422" y1="31" x2="518" y2="31" />
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="46">key</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="71">name</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="96">city</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="121">province</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="146">place</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="171">sport</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="196">date</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="221">free</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="246">cost</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="271">description</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="296">plus</text>
+	<text font-family="Helvetica" font-size="13" fill="#000000" xml:space="preserve" x="426" y="321">competitors</text>
+	<line stroke="black" stroke-opacity="1" x1="422" y1="333" x2="518" y2="333" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="268" y1="241" x2="212" y2="150" />
+	<line stroke="black" stroke-opacity="1" x1="209" y1="145" x2="207" y2="153" />
+	<line stroke="black" stroke-opacity="1" x1="209" y1="145" x2="217" y2="146" />
+	<line stroke="black" stroke-opacity="1" x1="207" y1="153" x2="217" y2="146" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="111" y1="233" x2="143" y2="161" />
+	<line stroke="black" stroke-opacity="1" x1="146" y1="156" x2="138" y2="158" />
+	<line stroke="black" stroke-opacity="1" x1="146" y1="156" x2="148" y2="163" />
+	<line stroke="black" stroke-opacity="1" x1="138" y1="158" x2="148" y2="163" />
+</g>
+</svg>

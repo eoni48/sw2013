@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
@@ -15,39 +15,54 @@
 			<div id="logo">
 				<h1>Eventos</h1>
 			</div>
-			<div id="navegacion">
-				<div id="menuNavegacion">
-					<ul>
-						<li class="inicio"><a href="index.html">Inicio </a></li>
-						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
-						<li class="log"><a href="log.html">Log in </a></li>
-					</ul>
-				</div>
-				<div class="sign">
-				</div>
-			</div>
 		</div>
 		<div class="cuerpo">
 			<div class="contenido">
 				<ul>
-					<li>Buscador.</li>
-					<li>Lista de eventos.</li>
-					<li>
-						Evento.
+					<li>Mapa web.
 						<ul>
-							<li>Crear evento.</li>
-							<li>Modificar (solo organizador del evento).</li>
-							<li>Apuntarse.</li>
-							<li>Ver informacion</li>			
+							<li> Usuario no registrado.
+								<ul>
+									<li>Ver y buscas eventos.</li>
+									<li>Ver informacion de un evento.</li>
+									<li>Crear nuevo usuario.</li>
+									<li>Loguearse.</li>
+								</ul>
+							</li>
+							<li> Usuario normal.
+								<ul>
+									<li>Ver y buscas eventos.</li>
+									<li>Ver informacion de un evento.</li>
+									<li>Apuntarse a eventos.</li>
+									<li>Desapuntarse a eventos.</li>
+								</ul>
+							</li>
+							<li> Usuario organizador.
+								<ul>
+									<li>Ver y buscas eventos.</li>
+									<li>Ver informacion de un evento.</li>
+									<li>Crear nuevos eventos.</li>
+									<li>Modificar un evento creado por el mismo.</li>
+									<li>Ver usuarios apuntados a sus eventos.</li>
+								</ul>
+							</li>
+						</ul>
+					
+					</li>
+					<li>Código fuente.
+						<ul>
+							<li>El código se puede encontrar en <a href="git@github.com:ocrespo/sw2013.git"> github</a></li>
 						</ul>
 					</li>
-					<li>
-						Usuario.
+					<li>Diagrama UML, realizado con Bouml.
 						<ul>
-							<li>Registrarse.</li>
-							<li>Log in.</li>
+							<li><p>El paquete Data contiene las clases que van a ser guardadas en la Base de datos.</p></li>
+							<li><p>DAO es el singleton que se usa para acceder a la Base de datos.</p></li>
+							<li><a href="/umlWeb/index.html">Diagramas</a></li>
 						</ul>
+						
 					</li>
+					
 					
 				</ul>
 				

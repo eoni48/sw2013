@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/formulario_evento.css"></link>
@@ -115,21 +115,21 @@ else{
 					<form id="crear_evento" method="post" action="/nuevo_evento">
 						
 						<fieldset class="izquierda">
-							<label>Nombre del evento:</label>
+							<label for="nombre">Nombre del evento:</label>
 							<br />
 							<input id="nombre" type="text" name="nombre" value="<%out.println(name);%>"/>
 							
 							<br />
 							<br />
 							
-							<label>Localidad:</label>
+							<label for="localidad">Localidad:</label>
 							<br />
 							<input id="localidad" type="text" name="localidad" value="<%out.println(city);%>"/>
 							
 							<br />
 							<br />
 							
-							<label>Lugar:</label>
+							<label for="lugar">Lugar:</label>
 							<br />
 							<input id="lugar" type="text" name="lugar" value="<%out.println(place);%>"/>
 							
@@ -140,7 +140,7 @@ else{
 							
 						</fieldset>
 						<fieldset class="derecha">
-							<label>Deporte:</label>
+							<label for="deporte">Deporte:</label>
 							<br />
 							<select id="tipo" name="deporte">
 								<option <%if(sport == Sport.athletics){%> selected="selected" <%} %> value="atletismo">Atletismo</option>
@@ -151,7 +151,7 @@ else{
 							<br />
 							<br />
 							
-							<label>Comunidad Autonoma:</label>
+							<label for="comunidad">Comunidad Autonoma:</label>
 							<br />
 							<select id="comunidad" name="comunidad">  	   
 					            <option <%if(province.equals("andalucia")){%> selected="selected" <%} %>  value="andalucia">Andalucía</option>  
@@ -175,34 +175,34 @@ else{
 							<br />
 							<br />
 							
-							<label>Fecha:</label>
+							<label for="fecha">Fecha:</label>
 							<br />
 							<input id="fecha" type="text" readonly="readonly" name="fecha" value="<%out.println(date);%>"/>
 							
 							<br />
 							<br />
 							
-							<label>¿Gratuito?</label>
+							<label for="es_gratis">¿Gratuito?</label>
 							<br />
 							<input <%if(free){%> checked="checked" <%} %> name="es_gratis" type="radio" value="si"/>Si
 							<input <%if(!free){%> checked="checked" <%} %> name="es_gratis" type="radio" value="no"/>No
 							<br />
 							<br />
 							<div class="precio">
-								<label>Precio:</label>
+								<label for="precio">Precio:</label>
 								<br />
 								<input id="precio" type="text" name="precio" value="<%out.println(cost);%>"/>€
 							</div>
 						</fieldset>
 						<fieldset class="inferior">
-							<label>Descripción:</label>
+							<label for="descripcion">Descripción:</label>
 							<br />
 							<textarea rows="20" cols="100" name="descripcion" > <%out.println(description);%></textarea>
 							
 							<br />
 							<br />
 							
-							<label>Requisitos adicionales:</label>
+							<label for="adicional">Requisitos adicionales:</label>
 							<br />
 							<textarea rows="10" cols="100" name="adicional"><%out.println(plus);%></textarea>
 							<br />

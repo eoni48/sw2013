@@ -3,6 +3,8 @@
  */
 package oscarsw.data;
 
+import java.util.ArrayList;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
@@ -15,19 +17,21 @@ import javax.jdo.annotations.PrimaryKey;
  */
 @PersistenceCapable
 @Inheritance(strategy = InheritanceStrategy.SUBCLASS_TABLE)
-public class User {
+public abstract class User {
 	@PrimaryKey
-	private String nick;
+	protected String nick;
 	@Persistent
-	private String pass;
+	protected String pass;
 	@Persistent
-	private String name;
-	
+	protected String name;
+	@Persistent
+	protected ArrayList<Long> events;
 	
 	public User(String nick,String pass,String name){
 		this.nick = nick;
 		this.pass = pass;
 		this.name = name;
+		this.events = new ArrayList<Long>();
 	}
 	/**
 	 * @return the nick
@@ -58,6 +62,12 @@ public class User {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	public void addEvent(Long key){
+		events.add(key);
+	}
+	public void removeEvent(Long id){
+		events.remove(id);
 	}
 	
 }

@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/formulario_evento.css"></link>
@@ -61,20 +61,20 @@ String nick = (String)session.getAttribute("nick");
 					<form  name="crear_usuario"  method="post" action="/nuevo_usuario" >
 						
 						<fieldset class="izquierda">
-							<label>Nick:</label>
+							<label for="nick">Nick:</label>
 							<br />
-							<input id="nick" type="text" name="nick" value=""/>
+							<input id="nick" type="text" name="nick"/>
 							
 							<br />
 							<br />
-							<label>Nombre de usuario:</label>
+							<label for="nombre">Nombre de usuario:</label>
 							<br />
 							<input id="nombre" type="text" name="nombre"/>
 							
 							<br />
 							<br />
 							
-							<label>Tipo:</label>
+							<label for="tipo">Tipo:</label>
 							<br />
 							<select id="tipo" name="tipo">
 								<option value="normal">Normal</option>
@@ -84,13 +84,13 @@ String nick = (String)session.getAttribute("nick");
 							<br />
 						</fieldset>
 						<fieldset class="derecha">
-							<label>Contraseña:</label>
+							<label for="pass">Contraseña:</label>
 							<br />
 							<input id="pass" type="password" name="pass"/>
 							<br />
 							<br />
 							
-							<label>Repetir Contraseña:</label>
+							<label for="pass2">Repetir Contraseña:</label>
 							<br />
 							<input id="pass2" type="password" name="pass2"/>
 							

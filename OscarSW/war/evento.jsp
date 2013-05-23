@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/evento.css"></link>
@@ -22,9 +22,15 @@ session = request.getSession();
 String type = (String)session.getAttribute("type");
 String nick = (String)session.getAttribute("nick");
 
-String id = request.getParameter("id");
-
-Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
+String aux_id = request.getParameter("id");
+Long id = 0L;
+try{
+	id = Long.valueOf(aux_id);
+}
+catch(Exception e){
+	response.sendRedirect("/lista_eventos.jsp");
+}
+Event event = (DAO.getInstance()).getEvent(id);
 
 String image="res/";
 if(event.getSport() == Sport.athletics){
@@ -91,16 +97,16 @@ else{
 				</div>
 				<div class="izquierda">
 					<div class="subtitulo">
-						<h5>Organización</h5>
+						<h2>Organización</h2>
 						<p><%out.println(event.getOrganizer());%></p>
 						
 					</div>
 					<div class="subtitulo">
-						<h5>Descripción</h5>
+						<h2>Descripción</h2>
 						<p><%out.println(event.getDescription());%></p> 
 					</div>
 					<div class="subtitulo">
-						<h5>Requisitos</h5>
+						<h2>Requisitos</h2>
 						<%
 						if(!event.isFree()){
 						%>
@@ -111,7 +117,7 @@ else{
 						<p><%out.println(event.getPlus());%></p> 
 					</div>
 					<div class="subtitulo">
-						<h5>Localización</h5>
+						<h2>Localización</h2>
 						<p>Ciudad: <%out.println(event.getCity());%></p> 
 						<p>Comunidad: <%out.println(event.provinceToString());%></p> 
 						<p>Lugar: <%out.println(event.getPlace());%></p> 
@@ -128,7 +134,7 @@ else{
 							<!--  <a href="formulario_evento.jsp?id=<%out.println(id);%>">Modificar</a>-->	
 							<form method="get" action="/formulario_evento.jsp">
 								<fieldset class="inputs_evento">	
-									<input class="info" type="text" name="id" value="<%out.println(id);%>"/>
+									<input class="info" type="text" name="id" value="<%out.println(id);%>" title="id"/>
 									<input class="boton_editar" type="submit" title="Modificar" value="Editar"/>
 								</fieldset>
 							</form>
@@ -139,7 +145,7 @@ else{
 				<div class="inferior">
 					<%if(nick != null && event.getOrganizer().equals(nick)){%>
 						<div class="subtitulo">
-						<h5>Participantes</h5>
+						<h2>Participantes</h2>
 						<%
 						ArrayList<String> comps = event.getCompetitors();
 						for(String comp : comps){
@@ -174,7 +180,7 @@ else{
 						%>
 						<form method="post" action="/apuntar_evento">
 							<fieldset class="inputs_evento">	
-								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>"/>
+								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>" title="id"/>
 								<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>
 							</fieldset>
 						</form>
@@ -185,7 +191,7 @@ else{
 						%>
 						<form method="post" action="/desapuntar_evento">
 							<fieldset class="inputs_evento">	
-								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>"/>
+								<input class="info" type="text" name="id" value="<%out.println(event.getKey());%>"title="id"/>
 								<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="Desapuntarse"/>
 							</fieldset>
 						</form>

@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link type="text/css" rel="stylesheet" href="css/lista_eventos.css"></link>
@@ -82,10 +82,10 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 				<div id="buscador">
 					<form id="form-buscador" method="get" action="/lista_eventos.jsp" enctype="text/plain">
 					    <fieldset id="inputs_buscador">			
-					    	<label>Buscar:</label>  	  
-					        <input id="nombre" type="text" name="nombre"/>	
-					        <label> en </label>  	  
-					        <select id=comunidad name="comunidad">  
+					    	<label for="nombre">Buscar:</label>  	  
+					        <input id="nombre" type="text" name="nombre" title="Introducir nombre a buscar"/>	
+					        <label for="comunidad"> en </label>  	  
+					        <select id="comunidad" name="comunidad">  
 					        	<option value="todo">(Toda España)</option>  
 					            <option value="andalucia">Andalucía</option>  
 					            <option value="aragon">Aragón</option>  
@@ -105,7 +105,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 					            <option value="vasco">País Vasco</option>
 					            <option value="valencia">Valencia</option>        
 			        		</select> 	
-			        		<label > de  </label>  	      
+			        		<label for="deporte"> de  </label>  	      
 			        		<select id="deporte" name="deporte">  
 					        	<option value="todo">(Cualquier deporte)</option>  
 					            <option value="athletics">Atletismo</option>  
@@ -175,6 +175,69 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 									<li>
 										<a href="lista_eventos.jsp?comunidad=
 										<%
+											out.println("canarias");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Canarias</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("cantabria");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Cantabria</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("castilla_mancha");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Castilla la Mancha</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("castilla_leon");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Castilla y León</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("catalona");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Cataluña</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("extremadura");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Extremadura</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("galicia");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Galicia</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
 											out.println("rioja");
 											if(sport!= null){
 												out.println("&deporte="+sport);
@@ -182,7 +245,49 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 										%>">La Rioja</a>
 									</li>
 									<li>
-										Más...
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("madrid");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Madrid</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("murcia");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Murcia</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("navarra");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Navarra</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("vasco");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">País Vasco</a>
+									</li>
+									<li>
+										<a href="lista_eventos.jsp?comunidad=
+										<%
+											out.println("valencia");
+											if(sport!= null){
+												out.println("&deporte="+sport);
+											}
+										%>">Valencia</a>
 									</li>
 								</ul>
 							</li>
@@ -311,7 +416,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 												%>
 												<form method="post" action="/apuntar_evento">
 													<fieldset class="inputs_evento">	
-														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>"/>
+														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>" title="id"/>
 														<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="¡Apúntate!"/>
 													</fieldset>
 												</form>
@@ -322,8 +427,8 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 												%>
 												<form method="post" action="/desapuntar_evento">
 													<fieldset class="inputs_evento">	
-														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>"/>
-														<input class="boton_inscribiSe" type="submit" title="Inscribirse" value="Desapuntarse"/>
+														<input class="info" type="text" name="id" value="<%out.println(e.getKey());%>" title="id"/>
+														<input class="boton_inscribiSe" type="submit" title="Desapuntarse" value="Desapuntarse"/>
 													</fieldset>
 												</form>
 												<%
@@ -352,7 +457,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 					</div>			
 				</div>
 			</div><!--contenido  -->
-			<div class="mapa_web"><a href="MapaWeb.html">Mapa web</a> </div>
+			<div class="mapa_web"><a href="MapaWeb.html">Documentacion web</a> </div>
 		</div><!--cuerpo  -->
 		
 	</div>

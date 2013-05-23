@@ -4,7 +4,6 @@
 package oscarsw.client;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import oscarsw.dao.DAO;
-import oscarsw.data.Competitor;
 import oscarsw.data.User;
 
 /**

@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
@@ -59,10 +59,10 @@ String nick = (String)session.getAttribute("nick");
 				<div id="buscador">
 					<form id="form-buscador" method="get" action="/lista_eventos.jsp" enctype="text/plain">
 					    <fieldset id="inputs_buscador">			
-					    	<label>Buscar:</label>  	  
-					        <input id="nombre" type="text" name="nombre"/>	
-					        <label> en </label>  	  
-					        <select id=comunidad name="comunidad">  
+					    	<label for="nombre">Buscar:</label>  	  
+					        <input id="nombre" type="text" name="nombre" title="Introducir nombre para buscar"/>	
+					        <label for="comunidad"> en </label>  	  
+					        <select id="comunidad" name="comunidad">  
 					        	<option value="todo">(Toda España)</option>  
 					            <option value="andalucia">Andalucía</option>  
 					            <option value="aragon">Aragón</option>  
@@ -82,7 +82,7 @@ String nick = (String)session.getAttribute("nick");
 					            <option value="vasco">País Vasco</option>
 					            <option value="valencia">Valencia</option>        
 			        		</select> 	
-			        		<label > de  </label>  	      
+			        		<label for="deporte" > de  </label>  	      
 			        		<select id="deporte" name="deporte">  
 					        	<option value="todo">(Cualquier deporte)</option>  
 					            <option value="athletics">Atletismo</option>  
