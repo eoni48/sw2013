@@ -44,10 +44,10 @@ public class CreateEvent extends HttpServlet{
 			}
 		}
 		
-		String name = request.getParameter("nombre");
-		String city = request.getParameter("localidad");
+		String name = request.getParameter("nombre").trim();
+		String city = request.getParameter("localidad").trim();
 		String province = request.getParameter("comunidad");
-		String place = request.getParameter("lugar");
+		String place = request.getParameter("lugar").trim();
 		String aux_gratis = request.getParameter("es_gratis");
 		boolean free;
 		float cost = 0;
@@ -56,7 +56,7 @@ public class CreateEvent extends HttpServlet{
 		}
 		else{
 			free = false;
-			cost = Float.parseFloat(request.getParameter("precio"));
+			cost = Float.parseFloat(request.getParameter("precio").trim());
 		}
 		
 		String aux_date = request.getParameter("fecha");

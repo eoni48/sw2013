@@ -30,9 +30,15 @@
 					<!--<div class="superior">
 						
 					</div>-->
-					<form method="post" action="/nuevo_usuario" >
+					<form  id="crear_usuario"  method="post" action="/nuevo_usuario" >
 						
 						<fieldset class="izquierda">
+							<label>Nick:</label>
+							<br />
+							<input id="nick" type="text" name="nick" value="aa"/>
+							
+							<br />
+							<br />
 							<label>Nombre de usuario:</label>
 							<br />
 							<input id="nombre" type="text" name="nombre"/>
@@ -53,15 +59,21 @@
 							<label>Contraseña:</label>
 							<br />
 							<input id="pass" type="password" name="pass"/>
+							<br />
+							<br />
 							
+							<label>Repetir Contraseña:</label>
+							<br />
+							<input id="pass2" type="password" name="pass2"/>
+							
+							<br />
+							<br />
 						</fieldset>
 						<fieldset class="inferior">
-					
-							<br />
-							<br />
+				
 							<div class="botones">
-								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar"/>
-								<input id="boton_cancelar" type="button" onclick="window.location='lista_eventos.jsp'" title="cancelar" value="Cancelar"/>
+								<input id="boton_aceptar" type="button" onclick="comprobarUsuario()" title="aceptar" value="Aceptar" name="Aceptar"/>
+								<input id="boton_cancelar" type="button" onclick="window.location='lista_eventos.jsp'" title="cancelar" value="Cancelar" name="Cancelar"/>
 							</div>
 							
 						</fieldset>
@@ -96,7 +108,7 @@
 				código licenciado bajo <a href="http://www.gnu.org/licenses/gpl.html">GPLV3</a>.
 				<br />
 				<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES">
-					<img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
+					<img alt="Lice ncia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
 				</a>
 				<br />
 				Las imágenes y logos de esta página estan bajo una 
@@ -110,5 +122,7 @@
 			
      
 		</div><!-- licencias -->
+		
+		<script type="text/javascript" src="js/formulario_comprobar.js"></script>
 </body>
 </html>

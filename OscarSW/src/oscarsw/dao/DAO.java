@@ -133,7 +133,7 @@ public class DAO {
 			user = pm.getObjectById(Competitor.class,key);
 		}
 		catch(Exception e){
-			return null;
+			//return null;
 		}
 		finally{
 			pm.close();
@@ -207,7 +207,7 @@ public class DAO {
 			event = pm.getObjectById(Event.class,key);
 		}
 		catch(Exception e){
-			return null;
+			//return null;
 		}
 		finally{
 			pm.close();
@@ -231,7 +231,7 @@ public class DAO {
 			
 		}
 		catch(Exception e){
-			return;
+			//return;
 		}
 		finally{
 			pm.close();
@@ -252,7 +252,7 @@ public class DAO {
 			user.removeEvent(event.getKey());
 		}
 		catch(Exception e){
-			return;
+			//return;
 		}
 		finally{
 			pm.close();

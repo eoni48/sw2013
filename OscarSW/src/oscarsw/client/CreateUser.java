@@ -26,11 +26,11 @@ public class CreateUser extends HttpServlet{
 		String type = request.getParameter("tipo");
 		
 		if(type.equals("normal")){
-			Competitor user = new Competitor(request.getParameter("nombre"), request.getParameter("pass"), "pepe", "paco", "1");
+			Competitor user = new Competitor(request.getParameter("nick"), request.getParameter("pass"), "pepe");
 			(DAO.getInstance()).addCompetitor(user);
 		}
 		else{
-			Organizer user = new Organizer(request.getParameter("nombre"), request.getParameter("pass"), "manolo", "2");
+			Organizer user = new Organizer(request.getParameter("nick"), request.getParameter("pass"), "manolo", "2");
 			(DAO.getInstance()).addOrganizer(user);
 		}
 		

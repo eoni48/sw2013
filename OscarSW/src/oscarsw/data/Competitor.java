@@ -16,20 +16,10 @@ import javax.jdo.annotations.Persistent;
 public class Competitor extends User {
 	
 	@Persistent
-	private String name;
-	@Persistent
-	private String lastName;
-	@Persistent
-	private String dni;
-	
-	@Persistent
 	private ArrayList<Long> events;
 
-	public Competitor(String nick, String pass,String name,String lastName,String dni) {
-		super(nick, pass);
-		this.name = name;
-		this.lastName = lastName;
-		this.dni = dni;
+	public Competitor(String nick, String pass,String name) {
+		super(nick, pass,name);
 		
 		events = new ArrayList<Long>();
 	}

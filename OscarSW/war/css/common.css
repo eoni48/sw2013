@@ -5,6 +5,13 @@ h1 {
   margin: 40px 0px 70px;
   text-align: center;
 }
+a,a:LINK,a:VISITED,a:ACTIVE,p,span{
+	
+	font-size: 1em;
+}
+a,a:LINK,a:VISITED,a:ACTIVE,p,span,h1,h2,h3,h4,h5{
+	font-family: sans-serif;
+}
 ul{
 	/*list-style-type: none;*/
 }
