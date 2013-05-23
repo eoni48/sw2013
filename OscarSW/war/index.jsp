@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,6 +12,10 @@
 	<title>Eventos</title>
 </head>
 <body>
+<%
+String type = (String)session.getAttribute("type");
+String nick = (String)session.getAttribute("nick");
+%>
 	<div id="contenedor-index">
 		<div id="cabezera">
 			<div id="logo">
@@ -18,24 +24,45 @@
 			<div id="navegacion">
 				<div id="menuNavegacion">
 					<ul>
-						<li class="inicio"><a href="index.html">Inicio </a></li>
+						<li class="inicio"><a href="index.jsp">Inicio </a></li>
 						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
-						<li class="log"><a href="log.html">Log in </a></li>
+						<%
+						if(type != null && type.equals("organizer")){
+						%>
+						<li class="ultimo"><a href="formulario_evento.jsp">Crear evento</a></li>
+						<% 
+						}
+						
+						
+						if(nick == null){
+						%>
+							<li class="log"><a href="log.jsp">Log in </a></li>
+						<%
+						}
+						else{
+						%>
+							<li class="log"><a><%out.println("Bienvenido, "+nick);%></a>
+							 <a href="/login"> (No eres tu)</a>
+							</li>
+						<% 
+						}
+						%>
+						
+						
 					</ul>
-				</div>
-				<div class="sign">
+				
 				</div>
 			</div>
 		</div>
 		<div class="cuerpo">
 			<div class="contenido">
 				<div id="buscador">
-					<form id="form-buscador" action="URL" enctype="text/plain">
-					    <fieldset id="inputs">			
+					<form id="form-buscador" method="get" action="/lista_eventos.jsp" enctype="text/plain">
+					    <fieldset id="inputs_buscador">			
 					    	<label>Buscar:</label>  	  
-					        <input id="nombre" type="text"/>	
+					        <input id="nombre" type="text" name="nombre"/>	
 					        <label> en </label>  	  
-					        <select id="categoria" name="categoria">  
+					        <select id=comunidad name="comunidad">  
 					        	<option value="todo">(Toda España)</option>  
 					            <option value="andalucia">Andalucía</option>  
 					            <option value="aragon">Aragón</option>  
@@ -56,12 +83,12 @@
 					            <option value="valencia">Valencia</option>        
 			        		</select> 	
 			        		<label > de  </label>  	      
-			        		<select id="deporte" name="categoria">  
+			        		<select id="deporte" name="deporte">  
 					        	<option value="todo">(Cualquier deporte)</option>  
-					            <option value="atletismo">Atletismo</option>  
-					            <option value="baloncesto">Baloncesto</option>  
-					            <option value="futbol">Fútbol</option>  
-					            <option value="varios">Varios</option>  
+					            <option value="athletics">Atletismo</option>  
+					            <option value="basket">Baloncesto</option>  
+					            <option value="footbal">Fútbol</option>  
+					            <option value="other">Otros</option>  
 			        		</select> 	          		
 			        		<input id="boton-buscar" type="submit" title="Buscar eventos" value="¡Buscar!"/>
 					    </fieldset>	        	

@@ -16,11 +16,15 @@
 </head>
 <body>
 <%
-	session = request.getSession();
+	//session = request.getSession();
 String type = (String)session.getAttribute("type");
 String nick = (String)session.getAttribute("nick");
 
 String name = request.getParameter("nombre");
+if(name != null && name.trim().equals("")){
+	name = null;
+}
+
 String province = request.getParameter("comunidad");
 if(province != null &&  province.equals("todo")){
 	province = null;
@@ -41,7 +45,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 			<div id="navegacion">
 				<div id="menuNavegacion">
 					<ul>
-						<li class="inicio"><a href="index.html">Inicio </a></li>
+						<li class="inicio"><a href="index.jsp">Inicio </a></li>
 						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
 						<%
 						if(type != null && type.equals("organizer")){

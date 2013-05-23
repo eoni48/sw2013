@@ -35,19 +35,19 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 			<div id="navegacion">
 				<div id="menuNavegacion">
 					<ul>
-						<li class="inicio"><a href="index.html">Inicio </a></li>
+						<li class="inicio"><a href="index.jsp">Inicio </a></li>
 						<li class="ultimo"><a href="lista_eventos.jsp">Eventos</a></li>
 						<%
 						if(type != null && type.equals("organizer")){
 						%>
-						<li class="ultimo"><a href="formulario_evento.html">Crear evento</a></li>
+						<li class="ultimo"><a href="formulario_evento.jsp">Crear evento</a></li>
 						<% 
 						}
 						
 						
 						if(nick == null){
 						%>
-							<li class="log"><a href="log.html">Log in </a></li>
+							<li class="log"><a href="log.jsp">Log in </a></li>
 						<%
 						}
 						else{
@@ -61,8 +61,7 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 						
 						
 					</ul>
-				</div>
-				<div class="sign">
+				
 				</div>
 			</div>
 		</div>

@@ -36,7 +36,7 @@ public class Login extends HttpServlet{
 			String aux_nick = request.getParameter("nick").trim();
 			String pass = request.getParameter("pass").trim();
 			if(type.equals("normal")){
-				user = (DAO.getInstance()).getCompetitor(nick,pass );
+				user = (DAO.getInstance()).getCompetitor(aux_nick,pass );
 			}
 			else{
 				user = (DAO.getInstance()).getOrganizer(aux_nick, pass);
