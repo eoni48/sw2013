@@ -250,7 +250,6 @@ public class DAO {
 			
 			user = pm.getObjectById(Competitor.class,key_comp);
 			user.removeEvent(event.getKey());
-			
 		}
 		catch(Exception e){
 			return;

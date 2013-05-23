@@ -85,7 +85,7 @@ else{
 					<!--<div class="superior">
 						
 					</div>-->
-					<form method="post" action="/nuevo_evento">
+					<form name="crear_evento" method="post" action="/nuevo_evento">
 						
 						<fieldset class="izquierda">
 							<label>Nombre del evento:</label>
@@ -182,7 +182,7 @@ else{
 							<br />
 							<input name="id" class="info" type="text" value="<%out.println(id);%>"/>
 							<div class="botones">
-								<input id="boton_aceptar" type="submit" title="aceptar" value="Aceptar" name="aceptar"/>
+								<input id="boton_aceptar" type="button" onclick="comprobarEvento()" title="aceptar" value="Aceptar" name="aceptar"/>
 								<input id="boton_cancelar" type="button" onclick="window.location='lista_eventos.jsp'" title="cancelar" value="Cancelar" name="cancelar"/>
 							</div>
 							
@@ -245,6 +245,7 @@ else{
     
     
     <script type="text/javascript" src="js/formulario_eventos.js"></script>
+    <script type="text/javascript" src="js/formulario_comprobar.js"></script>
 </body>
 
 </html>

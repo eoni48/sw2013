@@ -88,6 +88,13 @@ Event event = (DAO.getInstance()).getEvent(Long.valueOf(id));
 					</div>
 					<div class="subtitulo">
 						<h5>Requisitos</h5>
+						<%
+						if(!event.isFree()){
+						%>
+							<p><%out.print("El precio es: "+event.getCost()+"€");%></p>
+						<%
+						}
+						%>
 						<p><%out.println(event.getPlus());%></p> 
 					</div>
 					<div class="subtitulo">
