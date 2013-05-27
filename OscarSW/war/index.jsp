@@ -95,11 +95,15 @@ String nick = (String)session.getAttribute("nick");
 					</form>	
 				</div>
 				<div class="destacados">
+				<br />
+				<br />
+				<br />
 					<p>
 					Si eres un usuario normal:	
-					Busca eventos deportivos por comunidades autonómicas y participa, solo tienes que regístrate
+					busca eventos deportivos por comunidades autonómicas y participa, solo tienes que regístrate
 					y buscar.
-					
+					</p>
+					<p>
 					Si eres organizador, como por ejemplo una entidad deportiva, y organizas eventos deportivos. Regístrate y
 					crea los eventos para que todo el mundo pueda apuntarse.	
 					</p>
@@ -112,7 +116,7 @@ String nick = (String)session.getAttribute("nick");
 				</div>
 			</div>
 			
-			<div class="mapa_web"><a href="MapaWeb.html">Mapa web</a> </div>
+			<div class="mapa_web"><a href="MapaWeb.html">Documentación web</a> </div>
 		</div>
 		
 		

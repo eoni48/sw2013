@@ -457,7 +457,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 					</div>			
 				</div>
 			</div><!--contenido  -->
-			<div class="mapa_web"><a href="MapaWeb.html">Documentacion web</a> </div>
+			<div class="mapa_web"><a href="MapaWeb.html">Documentación web</a> </div>
 		</div><!--cuerpo  -->
 		
 	</div>

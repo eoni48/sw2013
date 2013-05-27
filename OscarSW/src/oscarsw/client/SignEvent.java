@@ -38,7 +38,7 @@ public class SignEvent extends HttpServlet{
 		}
 		else{
 			Competitor user = (DAO.getInstance()).getCompetitor(nick);
-			if(user == null || !user.isSign(Long.valueOf(id))){
+			if(user == null || user.isSign(Long.valueOf(id))){
 				response.sendRedirect("/lista_eventos.jsp");
 				return;
 			}
