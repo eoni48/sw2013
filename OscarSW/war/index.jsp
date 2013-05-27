@@ -95,6 +95,14 @@ String nick = (String)session.getAttribute("nick");
 					</form>	
 				</div>
 				<div class="destacados">
+					<p>
+					Si eres un usuario normal:	
+					Busca eventos deportivos por comunidades autonómicas y participa, solo tienes que regístrate
+					y buscar.
+					
+					Si eres organizador, como por ejemplo una entidad deportiva, y organizas eventos deportivos. Regístrate y
+					crea los eventos para que todo el mundo pueda apuntarse.	
+					</p>
 					<div class="destacado-atletismo">
 					</div>
 					<div class="destacado-baloncesto">

@@ -149,7 +149,7 @@ List<Event> events = (DAO.getInstance()).getEvents(name,province,sport);
 											if(sport!= null){
 												out.println("&deporte="+sport);
 											}
-										%>">Aragon</a>
+										%>">Aragón</a>
 										
 									</li>
 									<li>
