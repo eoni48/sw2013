@@ -3,6 +3,7 @@
  */
 package oscarsw.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -133,7 +134,7 @@ public class DAO {
 			user = pm.getObjectById(Competitor.class,key);
 		}
 		catch(Exception e){
-			//return null;
+			return null;
 		}
 		finally{
 			pm.close();
@@ -149,7 +150,7 @@ public class DAO {
 			user = pm.getObjectById(Organizer.class,key);
 		}
 		catch(Exception e){
-			//return null;
+			return null;
 		}
 		finally{
 			pm.close();
@@ -183,17 +184,18 @@ public class DAO {
 	public List<Event> getEvents(String name,String province,String sport){
 		PersistenceManager pm = pmfInstance.getPersistenceManager();
 		//String query = "select from "+ Competitor.class)+" where nick=="+nick+" && pass=="+pass;
+		List<Event>  auxEvents = null;
 		List<Event>  events = null;
 		String filter = "";
 		try {
 			Query query = pm.newQuery(Event.class);
-			if(name != null){
-				filter+= "name == '"+name+"' ";
-			}
+			/*if(name != null){
+				filter+= "name == '"+name+"'";
+			}*/
 			if(province != null){
-				if(!filter.equals("")){
+				/*if(!filter.equals("")){
 					filter+=" && ";
-				}
+				}*/
 				filter+="province == '"+province+"'";
 			}
 			if(sport != null){
@@ -205,9 +207,21 @@ public class DAO {
 			if(!filter.equals(""))
 				query.setFilter(filter);
 			query.setOrdering("this.date ASC");
-			events = (List<Event>) query.execute();
-			if(events.isEmpty()){
+			auxEvents = (List<Event>) query.execute();
+			if(auxEvents.isEmpty()){
 				return null;
+			}
+			if(name != null){
+				events = new ArrayList<Event>();
+				for(Event e : auxEvents){
+					if(e.getName().contains(name)){
+						events.add(e);
+					}
+				}
+				
+			}
+			else{
+				events = auxEvents;
 			}
 		}
 		finally {
@@ -223,7 +237,7 @@ public class DAO {
 			event = pm.getObjectById(Event.class,key);
 		}
 		catch(Exception e){
-			//return null;
+			return null;
 		}
 		finally{
 			pm.close();
@@ -247,7 +261,7 @@ public class DAO {
 			
 		}
 		catch(Exception e){
-			//return;
+			return;
 		}
 		finally{
 			pm.close();
@@ -268,7 +282,7 @@ public class DAO {
 			user.removeEvent(event.getKey());
 		}
 		catch(Exception e){
-			//return;
+			return;
 		}
 		finally{
 			pm.close();

@@ -31,7 +31,10 @@ catch(Exception e){
 	response.sendRedirect("/lista_eventos.jsp");
 }
 Event event = (DAO.getInstance()).getEvent(id);
-
+if(event == null){
+	response.sendRedirect("/lista_eventos.jsp");
+	return;
+}
 String image="res/";
 if(event.getSport() == Sport.athletics){
 	image += "run.jpg";
